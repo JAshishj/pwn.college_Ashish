@@ -45,6 +45,6 @@
 
 I learned that the shell saves a history of every command that we invoke and that we can invoke it by using the history command.
 
-Refference :-[pwn.college Linux Luminarium-1.The command line](https://youtu.be/g_85EVO3IC0?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).
+Refference :-[pwn.college Linux Luminarium-1.The command line](https://youtu.be/g_85EVO3IC0?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC),
              [Basic shell commands](https://bash.cyberciti.biz/guide/Shell_commands).
              
