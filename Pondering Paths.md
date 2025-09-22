@@ -36,3 +36,24 @@
 
    ### Refference :-
    [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).
+
+# **3.<ins>Position thy self</ins>**:-
+   The challenge asks us to get the flag by invoking the /challenge/run program from a specific directory.
+
+## My solve:-
+   **My flag** :-`pwn.college{8hONncErtA4mtZC2JMepUg6ehBN.QX2QTN0wCNxAzNzEzW}`
+
+   So, the challenge asked us to get the flag by invoking the /challenge/run program from a specific directory, hence i opened the shell and as i did not know to which directory i had to go i tried to invoke /challenge/run program using absolute path the it showed that i was not in `/usr/share/doc/fontconfig` directory ,then i changed the directory to it by using the cd command and got the flag.
+   ```bash
+  hacker@paths~position-thy-self:/usr/share/doc/fontconfig$ /challenge/run
+  Correct!!!
+  /challenge/run is an absolute path, invoked from the right directory!
+  Here is your flag:
+  pwn.college{8hONncErtA4mtZC2JMepUg6ehBN.QX2QTN0wCNxAzNzEzW}
+   ```
+
+### What i learned:-
+   I learned that cd command is used to change directories and that the ~ symbol shown before now instead of it the current path of our shell is shown.
+
+   ### Refference :-
+   [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).   
