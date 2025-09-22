@@ -107,7 +107,7 @@
    [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).   
 
 
-   # **6.<ins>The root</ins>**:-
+   # **6.<ins>Implicit relative paths, from /</ins>**:-
    The challenge asks us to get the flag by invoking the /challenge/run program by using it's relative path from the /(root) directory.
 
 ## My solve:-
