@@ -11,7 +11,7 @@
    
      I learned how to run basic commands in shell and that commands in linux is case sensitive.
 
-     Refference :- https://youtu.be/g_85EVO3IC0?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC .
+     Refference :- [pwn.college Linux Luminarium-1.The command line](https://youtu.be/g_85EVO3IC0?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).
 
 
 2.**Intro to the arguments** :-
@@ -26,5 +26,6 @@
    ```
    I learned that commands can have arguments and we can enter it by giving a space after the command.
 
-   Refference :- https://youtu.be/g_85EVO3IC0?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC .
+   Refference :- [pwn.college Linux Luminarium-1.The command line](https://youtu.be/g_85EVO3IC0?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).
+
     
