@@ -17,8 +17,8 @@
    ### Refference :-
    [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).
   
-  **2.<ins>Program and absolute paths</ins>**:-
-    The challenge asks us to get the flag by invoking the run program by using it's absolute path which is in the challenge directory which in turn is in the root directory.
+  # **2.<ins>Program and absolute paths</ins>**:-
+ The challenge asks us to get the flag by invoking the run program by using it's absolute path which is in the challenge directory which in turn is in the root directory.
     
 ## My solve:-
    **My flag** :-`pwn.college{MuwmaHtivXp9dOlCKzHtB1DGJH_.QX1QTN0wCNxAzNzEzW}`
