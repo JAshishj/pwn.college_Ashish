@@ -15,16 +15,16 @@
 
 
 2.Intro to the arguments :-
-     The chalenge asks us to enter the hello command in the shell with a single argument of hackers to get the flag.
+    The chalenge asks us to enter the hello command in the shell with a single argument of hackers to get the flag.
 
-     My flag :-pwn.college{YSB3qxKUvhU1NP5cNaCBdBU7aeS.QX4YjM1wCNxAzNzEzW}
+   My flag :-pwn.college{YSB3qxKUvhU1NP5cNaCBdBU7aeS.QX4YjM1wCNxAzNzEzW}
  
-     Basically,the challange asked us to get the flag by entering the command hello along with a single argument hackers in the shell, so i opened the shell and entered the command.
-     '''bash
-     hello hackers
-     pwn.college{YSB3qxKUvhU1NP5cNaCBdBU7aeS.QX4YjM1wCNxAzNzEzW}
-     '''
-    I learned that commands can have arguments and we can enter it by giving a space after the command.
+   Basically,the challange asked us to get the flag by entering the command hello along with a single argument hackers in the shell, so i opened the shell and entered the command.
+   '''bash
+   hello hackers
+   pwn.college{YSB3qxKUvhU1NP5cNaCBdBU7aeS.QX4YjM1wCNxAzNzEzW}
+   '''
+   I learned that commands can have arguments and we can enter it by giving a space after the command.
 
-    Refference :- https://youtu.be/g_85EVO3IC0?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC .
+   Refference :- https://youtu.be/g_85EVO3IC0?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC .
     
