@@ -105,3 +105,24 @@
 
    ### Refference :-
    [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).   
+
+
+   # **6.<ins>The root</ins>**:-
+   The challenge asks us to get the flag by invoking the /challenge/run program by using it's relative path from the /(root) directory.
+
+## My solve:-
+   **My flag** :-`pwn.college{AUhJazBtOvY4jD7pVzGGS2eEEGK.QX4cTO0wCNxAzNzEzW}`
+
+   So, the challenge asked us to get the flag by invoking the pwn using it's relative path from the /(root) directory hence, I opened the shell and changed my directory to /(root) directory by using the cd command and then i invoked the program using it's relative path and got the flag.
+   ```bash
+    hacker@path~the-root:~$ BOOM!!!
+   Here is your flag:
+   pwn.college{AUhJazBtOvY4jD7pVzGGS2eEEGK.QX4cTO0wCNxAzNzEzW}
+   ```
+
+### What i learned:-
+  I learned that relative path of a file does not start from /(root) directory,rather it is relative to our current directory
+
+   ### Refference :-
+   [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).
+
