@@ -45,7 +45,7 @@
 ## My solve:-
    **My flag** :-`pwn.college{8hONncErtA4mtZC2JMepUg6ehBN.QX2QTN0wCNxAzNzEzW}`
 
-   So, the challenge asked us to get the flag by invoking the /challenge/run program from a specific directory, hence i opened the shell and as i did not know to which directory i had to go i tried to invoke /challenge/run program using absolute path the it showed that i was not in `/usr/share/doc/fontconfig` directory ,then i changed the directory to it by using the cd command and got the flag.
+   So, the challenge asked us to get the flag by invoking the /challenge/run program from a specific directory, hence i opened the shell and as i did not know to which directory i had to go i tried to invoke /challenge/run program using absolute path from the root directory the it showed that i was not in `/usr/share/doc/fontconfig` directory ,then i changed the directory to it by using the cd command and got the flag.
    ```bash
   hacker@paths~position-thy-self:/usr/share/doc/fontconfig$ /challenge/run
   Correct!!!
@@ -67,7 +67,7 @@
 ## My solve:-
    **My flag** :-`pwn.college{o4JxTqg5-k8r7TbFkw9kcB_qNry.QX3QTN0wCNxAzNzEzW}`
 
-   So, the challenge asked us to get the flag by invoking the /challenge/run program from a specific directory, hence i opened the shell and as i did not know to which directory i had to go i tried to invoke /challenge/run program using absolute path the it showed that i was not in `/proc/131/fd` directory ,then i changed the directory to it by using the cd command and got the flag.
+   So, the challenge asked us to get the flag by invoking the /challenge/run program from a specific directory, hence i opened the shell and from the above challenge i had come to know that we would get the directory to which i had to go if i invoke /challenge/run program using absolute path from the root directory then it showed that i was not in `/proc/131/fd` directory ,and then i changed the directory to it by using the cd command and got the flag.
    ```bash
    hacker@paths~position-elsewhere:~$ cd /proc/131/fd
    hacker@paths~position-elsewhere:/proc/131/fd$ /challenge/run
@@ -90,7 +90,7 @@
 ## My solve:-
    **My flag** :-`pwn.college{QQ-tTvoyO_ovHugJGVT6AUMk_Uz.QX4QTN0wCNxAzNzEzW}`
 
-   So, the challenge asked us to get the flag by invoking the /challenge/run program from a specific directory, hence i opened the shell and as i did not know to which directory i had to go i tried to invoke /challenge/run program using absolute path the it showed that i was not in `/sys/kernel` directory ,then i changed the directory to it by using the cd command and got the flag.
+   So, the challenge asked us to get the flag by invoking the /challenge/run program from a specific directory, hence i opened the shell from the above challenge i had come to know that we would get the directory to which i had to go if i invoke /challenge/run program using absolute path from the root directory then it showed that i was not in `/sys/kernel` directory ,and then i changed the directory to it by using the cd command and got the flag.
    ```bash
    hacker@paths~position-yet-elsewhere:~$ cd /sys/kernel
    hacker@paths~position-yet-elsewhere:/sys/kernel$ /challenge/run
