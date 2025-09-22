@@ -33,7 +33,7 @@
    ```
 
 ### What i learned:-
-   I learened that many directory can be inside one another but all will be atlast be in the root directory.
+   I learened that many directory can be inside one another but all will  atlast be in the root directory.
 
    ### Refference :-
    [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).
