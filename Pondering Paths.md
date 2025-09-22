@@ -53,7 +53,7 @@
    ```
 
 ### What i learned:-
-   I learned that cd command is used to change directories and that the ~ symbol shown before now instead of it the current path of our shell is shown.
+   I learned that cd command is used to change directories and that the ~ symbol shown before now shows the current path of our shell .
 
    ### Refference :-
    [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).   
