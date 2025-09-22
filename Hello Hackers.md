@@ -1,4 +1,4 @@
-**1. <ins>Intro to the commands</ins>**:-
+#**1. <ins>Intro to the commands</ins>**:-
     The challenge asks us to enter the hello command in the shell to get the flag.
    
    My flag :- pwn.college{sx-8ZC15Stsq73B3AYwgptYt-E5.QX3YjM1wCNxAzNzEzW}
@@ -14,7 +14,7 @@
   Refference :- [pwn.college Linux Luminarium-1.The command line](https://youtu.be/g_85EVO3IC0?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).
 
 
-**2.<ins>Intro to the arguments</ins>**:-
+#**2.<ins>Intro to the arguments</ins>**:-
     The chalenge asks us to enter the hello command in the shell with a single argument of hackers to get the flag.
 
    **My flag** :-pwn.college{YSB3qxKUvhU1NP5cNaCBdBU7aeS.QX4YjM1wCNxAzNzEzW}
@@ -28,7 +28,7 @@
 
    Refference :- [pwn.college Linux Luminarium-1.The command line](https://youtu.be/g_85EVO3IC0?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).
 
-  3.**<ins>Command history</ins>**:-
+  #3.**<ins>Command history</ins>**:-
     The chalenge asks us to get the flag which is injected into our history.  
     
    **My flag**:-  pwn.college{0NBDO0vDI86DbAcfzzaOwvcgsOR.0lNzEzNxwCNxAzNzEzW}
