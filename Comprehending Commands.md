@@ -53,11 +53,11 @@
 
 
    # **4.<ins>Grepping for a needle in a haystack</ins>**:-
-   The challenge asks us to find the flag present in the hundred thousand lines of text present in the /challenge/data.txt file by using the grep command, also the challenge also gave us a hint that all the flag starts from pwn.college.
+   The challenge asks us to find the flag present in the hundred thousand lines of text present in the `/challenge/data.txt` file by using the grep command, also the challenge also gave us a hint that all the flag starts from pwn.college.
 ## My solve:-
    **My flag** :-` pwn.college{Awc0LVaQFgdu0XUTzewWhISPH4I.QX3EDO0wCNxAzNzEzW}`
 
-   So, the challenge asked us to read the flag present in the hundred thousand lines of text present in the /challenge/data.txt file by using the grep command, hence i opened the shell and by using the hint i used the grep command to find all the words containing the pwn.college and got the flag.
+   So, the challenge asked us to read the flag present in the hundred thousand lines of text present in the `/challenge/data.txt` file by using the grep command, hence i opened the shell and by using the hint i used the grep command to find all the words containing the pwn.college and got the flag.
    ```bash
    hacker@commands~grepping-for-a-needle-in-a-haystack:~$ grep pwn.college /challenge/data.txt
    pwn.college{Awc0LVaQFgdu0XUTzewWhISPH4I.QX3EDO0wCNxAzNzEzW}
@@ -68,4 +68,22 @@
 
    ### Refference :-
    [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).
+   
 
+ # **5.<ins>Comparing files</ins>**:-
+   The challenge asks us to find the flag by using the diff command on the 2 files of `/challenge` that is `/challenge/decoys_only.txt`:- which contains 100 fake flags and `/challenge/decoys_and_real.txt`:- contains all 100 fake flags plus the one real flag.
+## My solve:-
+   **My flag** :-`pwn.college{0WtSR3ojHcA-G1n7AlVyud8ChGM.01MwMDOxwCNxAzNzEzW}`
+
+   So, the challenge asked us to find the flag by using the diff command on the 2 files of `/challenge`, hence i open the shell and use the diff command on `/challenge/decoys_only.txt` and `/challenge/decoys_and_real.txt`, and get the flag.
+   ```bash
+   hacker@commands~comparing-files:~$ diff /challenge/decoys_only.txt /challenge/decoys_and_real.txt
+   67a68
+   > pwn.college{0WtSR3ojHcA-G1n7AlVyud8ChGM.01MwMDOxwCNxAzNzEzW}
+   ```
+
+### What i learned:-
+   I learned that to find the difference between two files by using the diff command which takes the path of files as an argument and gives what all difference are present between along with the line number on which the change is present on and also `<` followed by what is present before and `>` followed by what it became after.
+
+   ### Refference :-
+   [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).
