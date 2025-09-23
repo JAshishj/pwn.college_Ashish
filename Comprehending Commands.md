@@ -39,7 +39,7 @@
 ## My solve:-
    **My flag** :-`pwn.college{sLTitXy-UlO-Sk_Sldzb50g8FrZ.QXwITO0wCNxAzNzEzW}`
 
-   So, the challenge asked us to read the flag present in sone directory by using it's absolute path in the cat command without changing directories, hence i opened the shell where it told me that the flag is in the file `/usr/lib/flag`, so used the cat command to read that file by adding it's absolute path as an argument in the cat command and got the flag.
+   So, the challenge asked us to read the flag present in some directory by using it's absolute path in the cat command without changing directories, hence i opened the shell where it told me that the flag is in the file `/usr/lib/flag` , so i used the cat command to read that file by adding it's absolute path as an argument in the cat command and got the flag.
    ```bash
    hacker@commands~more-catting-practice:~$ cat /usr/lib/flag
    pwn.college{sLTitXy-UlO-Sk_Sldzb50g8FrZ.QXwITO0wCNxAzNzEzW}
@@ -50,3 +50,22 @@
 
    ### Refference :-
    [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).
+
+
+   # **4.<ins>Grepping for a needle in a haystack</ins>**:-
+   The challenge asks us to find the flag present in the hundred thousand lines of text present in the /challenge/data.txt file by using the grep command, also the challenge also gave us a hint that all the flag starts from pwn.college.
+## My solve:-
+   **My flag** :-` pwn.college{Awc0LVaQFgdu0XUTzewWhISPH4I.QX3EDO0wCNxAzNzEzW}`
+
+   So, the challenge asked us to read the flag present in the hundred thousand lines of text present in the /challenge/data.txt file by using the grep command, hence i opened the shell and by using the hint i used the grep command to find all the words containing the pwn.college and got the flag.
+   ```bash
+   hacker@commands~grepping-for-a-needle-in-a-haystack:~$ grep pwn.college /challenge/data.txt
+   pwn.college{Awc0LVaQFgdu0XUTzewWhISPH4I.QX3EDO0wCNxAzNzEzW}
+   ```
+
+### What i learned:-
+   I learned that it is difficult to read specific parts requiered to us in large files by using cat, instead of it we could use the grep command which takes two arguments those are:- string_name and the path of the file , then it will search the file and provides us with all the string containing the specified word.
+
+   ### Refference :-
+   [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).
+
