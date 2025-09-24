@@ -191,3 +191,78 @@
    
    ### Refference :-
    [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC). 
+
+
+# **11.<ins>An epic filesystem quest</ins>**:-
+   The challenge asks us to find the flag which is hidden by using the `cd`, `ls`, and `cat` commands the challenge also gives us some steps on how to solve them those are :- your first clue is in `/`, head on over there, look around with `ls`, there'll be a file named HINT or CLUE or something along those lines, `cat` that file to read the clue, depending on what the clue says, head on over to the next directory.
+## My solve:-
+   **My flag** :-`pwn.college{0ag7Q9hr12TortMGXqG0ZoNVOvf.QX5IDO0wCNxAzNzEzW}`
+
+   So, the challenge asked us to use the `cd`, `ls`, and `cat` command and find the flag using the clues given by the challenge,hence i opened the shell and changed my directory to `/` and then listed the files and directories  present in it using the `ls` command and used the `cat` command to read the `ALERT` file as it seemed different then the other files and got the next clue and similarly continued doing this till i got the flag.
+   ```bash
+   hacker@commands~an-epic-filesystem-quest:~$ cd /
+   hacker@commands~an-epic-filesystem-quest:/$ ls
+   ALERT  boot       dev  flag  lib    lib64   media  nix  proc  run   srv  tmp  var
+   bin    challenge  etc  home  lib32  libx32  mnt    opt  root  sbin  sys  usr
+   hacker@commands~an-epic-filesystem-quest:/$ cat ALERT
+   Lucky listing!
+   The next clue is in: /usr/lib/ruby/vendor_ruby/power_assert
+   The next clue is **hidden** --- its filename starts with a '.' character. You'll need to look for it using special options to 'ls'.
+   hacker@commands~an-epic-filesystem-quest:/$ cd /usr/lib/ruby/vendor_ruby/power_assert
+   hacker@commands~an-epic-filesystem-quest:/usr/lib/ruby/vendor_ruby/power_assert$ ls -a
+   .   .DISPATCH    configuration.rb  enable_tracepoint_events.rb  parser.rb
+   ..  colorize.rb  context.rb        inspector.rb                 version.rb
+   hacker@commands~an-epic-filesystem-quest:/usr/lib/ruby/vendor_ruby/power_assert$ cat .DISPATCH
+   Congratulations, you found the clue!
+   The next clue is in: /usr/lib/python3/dist-packages/jedi/inference/compiled
+   Watch out! The next clue is **trapped**. You'll need to read it out without 'cd'ing into the directory; otherwise, the clue will self destruct!
+   hacker@commands~an-epic-filesystem-quest:/usr/lib/ruby/vendor_ruby/power_assert$ ls /usr/lib/python3/dist-packages/jedi/inference/compiled
+   BRIEF-TRAPPED  __init__.py  __pycache__  access.py  getattr_static.py  mixed.py  subprocess  value.py
+   hacker@commands~an-epic-filesystem-quest:/usr/lib/ruby/vendor_ruby/power_assert$ cat /usr/lib/python3/dist-packages/jedi/inference/compiled/BRIEF-TRAPPED
+   Great sleuthing!
+   The next clue is in: /usr/share/javascript/mathjax/jax/output/HTML-CSS/fonts/Neo-Euler/Size2/Regular
+   Watch out! The next clue is **trapped**. You'll need to read it out without 'cd'ing into the directory; otherwise, the clue will self destruct!
+   hacker@commands~an-epic-filesystem-quest:/usr/lib/ruby/vendor_ruby/power_assert$ ls /usr/share/javascript/mathjax/jax/output/HTML-CSS/fonts/Neo-Euler/Size2/Regular
+   INFO-TRAPPED  Main.js
+   hacker@commands~an-epic-filesystem-quest:/usr/lib/ruby/vendor_ruby/power_assert$ cat /usr/share/javascript/mathjax/jax/output/HTML-CSS/fonts/Neo-Euler/Size2/Regular/INFO-TRAPPED
+   Congratulations, you found the clue!
+   The next clue is in: /opt/linux/linux-5.4/tools/perf/util/cs-etm-decoder
+   hacker@commands~an-epic-filesystem-quest:/usr/lib/ruby/vendor_ruby/power_assert$ cd /opt/linux/linux-5.4/tools/perf/util/cs-etm-decoder
+   hacker@commands~an-epic-filesystem-quest:/opt/linux/linux-5.4/tools/perf/util/cs-etm-decoder$ ls
+   Build  README  cs-etm-decoder.c  cs-etm-decoder.h
+   hacker@commands~an-epic-filesystem-quest:/opt/linux/linux-5.4/tools/perf/util/cs-etm-decoder$ cat README
+   Lucky listing!
+   The next clue is in: /usr/share/racket/pkgs/typed-racket-doc/typed-racket
+   hacker@commands~an-epic-filesystem-quest:/opt/linux/linux-5.4/tools/perf/util/cs-etm-decoder$ cd /usr/share/racket/pkgs/typed-racket-doc/typed-racket
+   hacker@commands~an-epic-filesystem-quest:/usr/share/racket/pkgs/typed-racket-doc/typed-racket$ ls
+   INSIGHT  compiled  info.rkt  scribblings
+   hacker@commands~an-epic-filesystem-quest:/usr/share/racket/pkgs/typed-racket-doc/typed-racket$ cat INSIGHT
+   Great sleuthing!
+   The next clue is in: /var/lib/php/modules/7.4/cli
+   The next clue is **hidden** --- its filename starts with a '.' character. You'll need to look for it using special options to 'ls'.
+   hacker@commands~an-epic-filesystem-quest:/usr/share/racket/pkgs/typed-racket-doc/typed-racket$ ls -a /var/lib/php/modules/7.4/cli
+   .  ..  .WHISPER  enabled_by_maint
+   hacker@commands~an-epic-filesystem-quest:/usr/share/racket/pkgs/typed-racket-doc/typed-racket$ cat /var/lib/php/modules/7.4/cli/.WHISPER
+   Tubular find!
+   The next clue is in: /usr/share/racket/pkgs/plot-lib/plot/private
+   The next clue is **delayed** --- it will not become readable until you enter the directory with 'cd'.
+   hacker@commands~an-epic-filesystem-quest:/usr/share/racket/pkgs/typed-racket-doc/typed-racket$ cd /usr/share/racket/pkgs/plot-lib/plot/private
+   hacker@commands~an-epic-filesystem-quest:/usr/share/racket/pkgs/plot-lib/plot/private$ ls
+   MEMO  common  compiled  deprecated  no-gui  plot2d  plot3d  utils-and-no-gui.rkt
+   hacker@commands~an-epic-filesystem-quest:/usr/share/racket/pkgs/plot-lib/plot/private$ cat MEMO
+   Lucky listing!
+   The next clue is in: /usr/share/javascript/three/examples/js/nodes/materials/nodes
+   Watch out! The next clue is **trapped**. You'll need to read it out without 'cd'ing into the directory; otherwise, the clue will self destruct!
+   hacker@commands~an-epic-filesystem-quest:/usr/share/racket/pkgs/plot-lib/plot/private$ ls /usr/share/javascript/three/examples/js/nodes/materials/nodes
+   GIST-TRAPPED  MeshStandardNode.js  PhongNode.js  RawNode.js  SpriteNode.js  StandardNode.js
+   hacker@commands~an-epic-filesystem-quest:/usr/share/racket/pkgs/plot-lib/plot/private$ cat /usr/share/javascript/three/examples/js/nodes/materials/nodes/GIST-TRAPPED
+   CONGRATULATIONS! Your perserverence has paid off, and you have found the flag!
+   It is: pwn.college{0ag7Q9hr12TortMGXqG0ZoNVOvf.QX5IDO0wCNxAzNzEzW}
+   ```
+
+### What i learned:-
+   I learned how to use `ls` and `cat` command with and without changing the directories and `cd` commands clearly.
+   
+   ### Refference :-
+   [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC). 
+
