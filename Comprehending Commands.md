@@ -108,3 +108,86 @@
 
    ### Refference :-
    [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).
+
+
+# **7.<ins>Touching files</ins>**:-
+   The challenge asks us to create two files `/tmp/pwn`and `/tmp/college` by using the `touch` command, and then invoke the `/challenge/run` to get the flag.
+## My solve:-
+   **My flag** :-`pwn.college{cBGYgTMoTFC4RB0-0nUYdJX5Pdo.QXwMDO0wCNxAzNzEzW}`
+
+   So, the challenge asked us to use the `touch` command to create two files i.e `/tmp/pwn`and `/tmp/college`, and then invoke the `/challenge/run` to get the flag, hence i opened the shell and create the two files using the `touch` command and then invoked `/challenge.run` and got the flag.
+   ```bash
+   hacker@commands~touching-files:~$ touch /tmp/pwn
+   hacker@commands~touching-files:~$ touch /tmp/college
+   hacker@commands~touching-files:~$ /challenge/run
+   Success! Here is your flag:
+   pwn.college{cBGYgTMoTFC4RB0-0nUYdJX5Pdo.QXwMDO0wCNxAzNzEzW}
+   ```
+
+### What i learned:-
+   I learned that to create new files we can use the `touch` command which takes the name or path along with the name of the file that we want to create as the argument, also i learned that the file will be always created in the current directory if use only the name and if we use the name along with the path the it will be created in the specified place.
+
+   ### Refference :-
+   [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).
+
+
+# **8.<ins>Removing files</ins>**:-
+   The challenge asks us to delete the `delete_me` file which will be present in our home directory using the `rm` command, and then invoke the `/challenge/run` to get the flag.
+## My solve:-
+   **My flag** :-`pwn.college{wVQZ9jl3IIpdwEGfsSpZxDyyErB.QX2kDM1wCNxAzNzEzW}`
+
+   So, the challenge asked us to use the `rm` command to delete the `delete_me` file, and then invoke the `/challenge/run` to get the flag, hence i opened the shell and as we always start in the home directory i directly deleted the `delete_me` file by usind `rm` command and entering the file as the argument and then invoked `/challenge/run` and got the flag.
+   ```bash
+   hacker@commands~removing-files:~$ rm delete_me
+   hacker@commands~removing-files:~$ /challenge/check
+   Excellent removal. Here is your reward:
+   pwn.college{wVQZ9jl3IIpdwEGfsSpZxDyyErB.QX2kDM1wCNxAzNzEzW}
+   ```
+
+### What i learned:-
+   I learned that to delet files we can use the `rm` command which takes the name of the file that we want to delete as the argument, also i learned that the only the files present in the current directory can be deleted.
+
+   ### Refference :-
+   [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).   
+
+
+# **9.<ins>Moving files</ins>**:-
+   The challenge asks us to `/flag` file into `/tmp/hack-the-planet` using the `mv` command, and then run the `/challenge/check` to get the flag.
+## My solve:-
+   **My flag** :-`pwn.college{g0AfgYPHJBT16vrX2lymHynLGiw.0VOxEzNxwCNxAzNzEzW}`
+
+   So, the challenge asked us to use the `mv` command to move the `/flag` to `/tmp/hack-the-planet`, and then run the `/challenge/check` to get the flag, hence i opened the shell and  moved the `/flag` to `/tmp/hack-the-planet` file by usind `mv` command and entering the file path as the argument and then ran `/challenge/check` and got the flag.
+   ```bash
+   hacker@commands~moving-files:~$ mv /flag /tmp/hack-the-planet
+   Correct! Performing 'mv /flag /tmp/hack-the-planet'.
+   hacker@commands~moving-files:~$ /challenge/check
+   Congrats! You successfully moved the flag to /tmp/hack-the-planet! Here it is:
+   pwn.college{g0AfgYPHJBT16vrX2lymHynLGiw.0VOxEzNxwCNxAzNzEzW}
+   ```
+
+### What i learned:-
+   I learned that to move files we can use the `mv` command which takes the name or path of the file that we want to move as the argument where the first argument is the source and the second is the destination, also i learned that if the source file exists and the destination file does not then the source file will be renamed to the destination file, if the destination already exists then it will be overwritten, if source is a file and destination is a directory,source file will be moved into that directory.  
+   
+   ### Refference :-
+   [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC). 
+
+
+   # **10.<ins>Hidden files</ins>**:-
+   The challenge asks us to find the flag which is present in a hidden dot-prepended file in `/` directory by using the `ls` command along with `-a` flag.
+## My solve:-
+   **My flag** :-`pwn.college{MPVuO5Hv11NB1B_HvCZAbkiGkO3.QXwUDO0wCNxAzNzEzW}`
+
+   So, the challenge asked us to use the `ls` command with `-a` flag to find the file in which the flag is present as a hidden dot-pretended file in `/`, hence i opened the shell and  used the `ls -a` command which gave me a file called `.flag-141632437824762` along with other files as it contained flag in it's name i thought that the flag should be present in it hence i used the `cat` command to read it and got the flag.
+   ```bash
+   hacker@commands~hidden-files:~$ ls -a /
+   .   .dockerenv             bin   challenge  etc   lib    lib64   media  nix  proc  run   srv  tmp  var
+   ..  .flag-141632437824762  boot  dev        home  lib32  libx32  mnt    opt  root  sbin  sys  usr
+   hacker@commands~hidden-files:/$ cat ./.flag-141632437824762
+   pwn.college{MPVuO5Hv11NB1B_HvCZAbkiGkO3.QXwUDO0wCNxAzNzEzW}
+   ```
+
+### What i learned:-
+   I learned that the `ls` command does not show the files that start with a `.`, and inorder to view them we have to use the `-a` flag along with the `ls` command.
+   
+   ### Refference :-
+   [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC). 
