@@ -55,7 +55,7 @@
    # **4.<ins>Grepping for a needle in a haystack</ins>**:-
    The challenge asks us to find the flag present in the hundred thousand lines of text present in the `/challenge/data.txt` file by using the `grep` command, also the challenge also gave us a hint that all the flag starts from pwn.college.
 ## My solve:-
-   **My flag** :-` pwn.college{Awc0LVaQFgdu0XUTzewWhISPH4I.QX3EDO0wCNxAzNzEzW}`
+   **My flag** :-`pwn.college{Awc0LVaQFgdu0XUTzewWhISPH4I.QX3EDO0wCNxAzNzEzW}`
 
    So, the challenge asked us to read the flag present in the hundred thousand lines of text present in the `/challenge/data.txt` file by using the `grep` command, hence i opened the shell and by using the hint i used the `grep` command to find all the words containing the pwn.college and got the flag.
    ```bash
@@ -125,7 +125,7 @@
    ```
 
 ### What i learned:-
-   I learned that to create new files we can use the `touch` command which takes the name or path along with the name of the file that we want to create as the argument, also i learned that the file will be always created in the current directory if use only the name and if we use the name along with the path the it will be created in the specified place.
+   I learned that to create new files we can use the `touch` command which takes the name or path along with the name of the file that we want to create as the argument, also i learned that the file will always be created in the current directory if only the name is used and if we use the name along with the path the it will be created in the specified place.
 
    ### Refference :-
    [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).
@@ -173,11 +173,11 @@
 
 
    # **10.<ins>Hidden files</ins>**:-
-   The challenge asks us to find the flag which is present in a hidden dot-prepended file in `/` directory by using the `ls` command along with `-a` flag.
+   The challenge asks us to find the flag which is present in a hidden dot-prepended file in `/` directory by using the `ls` command along with `-a` option.
 ## My solve:-
    **My flag** :-`pwn.college{MPVuO5Hv11NB1B_HvCZAbkiGkO3.QXwUDO0wCNxAzNzEzW}`
 
-   So, the challenge asked us to use the `ls` command with `-a` flag to find the file in which the flag is present as a hidden dot-pretended file in `/`, hence i opened the shell and  used the `ls -a` command which gave me a file called `.flag-141632437824762` along with other files as it contained flag in it's name i thought that the flag should be present in it hence i used the `cat` command to read it and got the flag.
+   So, the challenge asked us to use the `ls` command with `-a` option to find the file in which the flag is present as a hidden dot-pretended file in `/`, hence i opened the shell and  used the `ls -a` command which gave me a file called `.flag-141632437824762` along with other files as it contained the word flag in it's name i thought that the flag should be present in it hence i used the `cat` command to read it and got the flag.
    ```bash
    hacker@commands~hidden-files:~$ ls -a /
    .   .dockerenv             bin   challenge  etc   lib    lib64   media  nix  proc  run   srv  tmp  var
@@ -187,7 +187,7 @@
    ```
 
 ### What i learned:-
-   I learned that the `ls` command does not show the files that start with a `.`, and inorder to view them we have to use the `-a` flag along with the `ls` command.
+   I learned that the `ls` command does not show the files that start with a `.`, and inorder to view them we have to use the `-a` option along with the `ls` command also ilearned that `ls` command can take options along with it's arguments.
    
    ### Refference :-
    [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC). 
@@ -266,3 +266,92 @@
    ### Refference :-
    [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC). 
 
+
+# **12.<ins>Making directories</ins>**:-
+   The challenge asks us to create `/tmp/pwn` directory using the `mkdir` command and then create the `college` file in it, and then run the `/challenge/run` to get the flag.
+## My solve:-
+   **My flag** :-`pwn.college{Um-T-qRxqMyjhxUO6m3pzQLzEs8.QXxMDO0wCNxAzNzEzW}`
+
+   So, the challenge asked us to use the `mkdir` command to create `/tmp/pwn` directory and then create the `college` file in it, and then invoke the `/challenge/run` to get the flag, hence i opened the shell and create `/tmp/pwn` directory using the `mkdir` command then i used the `cd` command to go to that directory and then used the `touch` command to create the `college` file in it and then invoked `/challenge.run` and got the flag.
+   ```bash
+   hacker@commands~making-directories:~$ mkdir /tmp/pwn
+   hacker@commands~making-directories:~$ cd /tmp/pwn
+   hacker@commands~making-directories:/tmp/pwn$ touch college
+   hacker@commands~making-directories:/tmp/pwn$ /challenge/run
+   Success! Here is your flag:
+   pwn.college{Um-T-qRxqMyjhxUO6m3pzQLzEs8.QXxMDO0wCNxAzNzEzW}
+   ```
+
+### What i learned:-
+   I learned that to create new directories we can use the `mkdir` command which takes the name or path along with the name of the directory that we want to create as the argument, also i learned that the directory will always be created in the current directory if only the name is used and if we use the name along with the path the it will be created in the specified place.
+
+   ### Refference :-
+   [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).
+
+
+ # **4.<ins>Finding files</ins>**:-
+   The challenge asks us to find the flag hidden in the `flag` file present in a random directory.
+## My solve:-
+   **My flag** :-`pwn.college{Ihuo55u2omOJvfRknG1ZZsJsJ_E.QXyMDO0wCNxAzNzEzW}`
+
+   So, the challenge asked us to get the flag present in the `flag` file which is hidden in some random directory by using the `find` command, hence i opened the shell and used the `find` command along with the search criteria that the name should be flag and the search location as `/` and found the `flag` file and then used the `cat` command to read the file and got the flag.
+   ```bash
+   hacker@commands~finding-files:~$ find -name flag
+   hacker@commands~finding-files:~$ find / -name flag
+   find: ‘/tmp/tmp.TpSOPGOVKK’: Permission denied
+   find: ‘/etc/ssl/private’: Permission denied
+   /usr/local/lib/python3.8/dist-packages/pwnlib/flag
+   /usr/share/doc/ruby-xmlrpc/flag
+   find: ‘/var/cache/apt/archives/partial’: Permission denied
+   find: ‘/var/cache/ldconfig’: Permission denied
+   find: ‘/var/cache/private’: Permission denied
+   find: ‘/var/lib/apt/lists/partial’: Permission denied
+   find: ‘/var/lib/mysql-files’: Permission denied
+   find: ‘/var/lib/private’: Permission denied
+   find: ‘/var/lib/mysql’: Permission denied
+   find: ‘/var/lib/mysql-keyring’: Permission denied
+   find: ‘/var/lib/php/sessions’: Permission denied
+   find: ‘/var/log/private’: Permission denied
+   find: ‘/var/log/apache2’: Permission denied
+   find: ‘/var/log/mysql’: Permission denied
+   find: ‘/run/mysqld’: Permission denied
+   find: ‘/run/sudo’: Permission denied
+   find: ‘/root’: Permission denied
+   /opt/pwndbg/.venv/lib/python3.8/site-packages/pwnlib/flag
+   find: ‘/proc/tty/driver’: Permission denied
+   find: ‘/proc/1/task/1/fd’: Permission denied
+   find: ‘/proc/1/task/1/fdinfo’: Permission denied
+   find: ‘/proc/1/task/1/ns’: Permission denied
+   find: ‘/proc/1/fd’: Permission denied
+   find: ‘/proc/1/map_files’: Permission denied
+   find: ‘/proc/1/fdinfo’: Permission denied
+   find: ‘/proc/1/ns’: Permission denied
+   find: ‘/proc/7/task/7/fd’: Permission denied
+   find: ‘/proc/7/task/7/fdinfo’: Permission denied
+   find: ‘/proc/7/task/7/ns’: Permission denied
+   find: ‘/proc/7/fd’: Permission denied
+   find: ‘/proc/7/map_files’: Permission denied
+   find: ‘/proc/7/fdinfo’: Permission denied
+   find: ‘/proc/7/ns’: Permission denied
+   /nix/store/ka6xbd6z6wj5d6frl7ym4nzfc6p2wkdx-radare2-5.9.8/share/radare2/5.9.8/flag
+   /nix/store/f31j0igg7ms3yrj5gm3cm76bjcmdl8w5-python3.12-pwntools-4.13.1/lib/python3.12/site-packages/pwnlib/flag
+   /nix/store/7ns27apnvn4qj4q5c82x0z1lzixrz47p-radare2-5.9.8/share/radare2/5.9.8/flag
+   /nix/store/5z3sjp9r463i3siif58hq5wj5jmy5m98-python3.12-pwntools-4.13.1/lib/python3.12/site-packages/pwnlib/flag
+   /nix/store/n6vb30rd7kkwjj595pgm0dmsmfaqi6i5-rizin-0.7.3/share/rizin/flag
+   /nix/store/5n5lp1m8gilgrsriv1f2z0jdjk50ypcn-rizin-0.7.3/share/rizin/flag
+   /nix/store/bnlabj2vsbljhp597ir29l51nrqhm89w-rizin-0.7.4/share/rizin/flag
+   /nix/store/s8b49lb0pqwvw0c6kgjbxdwxcv2bp0x4-radare2-5.9.8/share/radare2/5.9.8/flag
+   /nix/store/8qvj9mzdq2qxgjigw4ysqgbkcx1zi80y-python3.13-pwntools-4.14.1/lib/python3.13/site-packages/pwnlib/flag
+   /nix/store/1hyxipvwpdpcxw90l5pq1nvd6s6jdi5m-python3.12-pwntools-4.14.1/lib/python3.12/site-packages/pwnlib/flag
+   /nix/store/dz2qxywk6d8hc1gkarpwbhyxb50sh2ak-pwntools-4.14.0/lib/python3.13/site-packages/pwnlib/flag
+   hacker@commands~finding-files:~$ cat /usr/local/lib/python3.8/dist-packages/pwnlib/flag
+   cat: /usr/local/lib/python3.8/dist-packages/pwnlib/flag: Is a directory
+   hacker@commands~finding-files:~$ cat /usr/share/doc/ruby-xmlrpc/flag
+   pwn.college{Ihuo55u2omOJvfRknG1ZZsJsJ_E.QXyMDO0wCNxAzNzEzW}
+   ```
+
+### What i learned:-
+   I learned that to search for a directory we can use the `find` command which takes optional arguments describing the search criteria and the search location, if we don't specify a search criteria, then `find` matches every file and if we don't specify a search location, `find` uses the current working directory.
+
+   ### Refference :-
+   [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).
