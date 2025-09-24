@@ -294,7 +294,7 @@
 ## My solve:-
    **My flag** :-`pwn.college{Ihuo55u2omOJvfRknG1ZZsJsJ_E.QXyMDO0wCNxAzNzEzW}`
 
-   So, the challenge asked us to get the flag present in the `flag` file which is hidden in some random directory by using the `find` command, hence i opened the shell and used the `find` command along with the search criteria that the name should be flag and the search location as `/` and found the `flag` file and then used the `cat` command to read the file and got the flag.
+   So, the challenge asked us to get the flag present in the `flag` file which is hidden in some random directory by using the `find` command, hence i opened the shell and used the `find` command along with the search criteria that the name should be flag and the search location as `/` and found the files having `flag` and then used the `cat` command to read all those file till i got the flag.
    ```bash
    hacker@commands~finding-files:~$ find -name flag
    hacker@commands~finding-files:~$ find / -name flag
