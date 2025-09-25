@@ -38,17 +38,33 @@
    None.
 
 
- # **2.<ins>Learning complex usage</ins>**:-
+ # **3.<ins>Reading manuals</ins>**:-
+   The challenge asks us to read the manual of the `challenge` and invoke the it with a secret option to get the flag.
+   
+## My solve:-
+   **My flag** :-``
+
+   So, the challenge asked us to get the flag by invoking the `/challenge` with a secret option which we have to find in the manual of the `challenge` by using the `man` command, hence i opened the shell and used the `man` command with `challenge` as the 
+   ```bash
+   
+   ```
+
+### What i learned:-
+   I learned that shell commands can take multiple arugments and also that arguments can also take arguments.
+   
+### Refference :-
+   None.
+
+
+ # **3.<ins>Learning complex usage</ins>**:-
    The challenge gives us to read the manual of the `challenge` and invoke the it with a secret option to get the flag.
    
 ## My solve:-
-   **My flag** :-`pwn.college{c13zcS3bWGtWgeGYf6qQ38-reby.QX1ITO0wCNxAzNzEzW}`
+   **My flag** :-``
 
    So, the challenge asked us to get the flag by invoking the `/challenge` with a secret option which we have to find in the manual of the `challenge` by using the `man` command, hence  
    ```bash
-   hacker@man~learning-complex-usage:~$ /challenge/challenge --printfile /flag
-   Correct argument! Here is the /flag file:
-   pwn.college{c13zcS3bWGtWgeGYf6qQ38-reby.QX1ITO0wCNxAzNzEzW}
+   
    ```
 
 ### What i learned:-
