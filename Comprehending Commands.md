@@ -358,17 +358,20 @@
 
 
  # **14.<ins>Linking files</ins>**:-
-   The challenge asks us to find the flag which is in `/flag` file, but `/challenge/catflag` will instead read out `/home/hacker/not-the-flag` by using symbolic links.
+   The challenge asks us to find the flag which is in `/flag` file, but `/challenge/catflag` will instead read out `/home/hacker/not-the-flag` hence by using symbolic links we have to get the flag.
 ## My solve:-
-   **My flag** :-``
+   **My flag** :-`pwn.college{Q3a4wpyuosMDK7G2nMRFuiHpRaX.QX5ETN1wCNxAzNzEzW}`
 
-   So, the challenge asked us to get the flag present in the `/flag` file 
+   So, the challenge asked us to get the flag present in the `/flag` file which before we could access by running `/challenge/catflag` but here it instead reads `/home/hacker/not-the-flag`, hence to get the flag we have to use symbolic links, hence i opened shell and used the `ln -s` command to link the `/flag` and `/home/hacker/not-the-flag` by enter them as as arguments respectively and then invoked the `/challenge/catflag` to get the flag.
    ```bash
-   
+   hacker@commands~linking-files:~$ ln -s /flag /home/hacker/not-the-flag
+   hacker@commands~linking-files:~$ /challenge/catflag
+   About to read out the /home/hacker/not-the-flag file!
+   pwn.college{Q3a4wpyuosMDK7G2nMRFuiHpRaX.QX5ETN1wCNxAzNzEzW}
    ```
 
 ### What i learned:-
-   I learned that to search for a directory we can use the `find` command which takes optional arguments describing the search criteria and the search location, if we don't specify a search criteria, then `find` matches every file and if we don't specify a search location, `find` uses the current working directory.
+   I learned that we can link files to each other using the `ln` command, i also learned that there are two types of link those are:- hard link and soft link or symbolic link, where a hard link is an alternate address that indexes that data and  a soft/symbolic link, instead, contains the original file name and when we access the symbolic link, Linux will realize that it is a symbolic link, read the original file name, and then automatically access that file, files can be soft linked using the `ln` command along with the `-s` option and takes the orginal file as the first argument and the link path as the second.
 
    ### Refference :-
    [pwn.college Linux Luminarium-3.Symbolic links](https://youtu.be/m55AtwjBXpE?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).
