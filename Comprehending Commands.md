@@ -289,7 +289,7 @@
    [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).
 
 
- # **4.<ins>Finding files</ins>**:-
+ # **13.<ins>Finding files</ins>**:-
    The challenge asks us to find the flag hidden in the `flag` file present in a random directory.
 ## My solve:-
    **My flag** :-`pwn.college{Ihuo55u2omOJvfRknG1ZZsJsJ_E.QXyMDO0wCNxAzNzEzW}`
@@ -355,3 +355,20 @@
 
    ### Refference :-
    [pwn.college Linux Luminarium-2.The file system](https://youtu.be/b67Jq6IZ3U8?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).
+
+
+ # **14.<ins>Linking files</ins>**:-
+   The challenge asks us to find the flag which is in `/flag` file, but `/challenge/catflag` will instead read out `/home/hacker/not-the-flag` by using symbolic links.
+## My solve:-
+   **My flag** :-``
+
+   So, the challenge asked us to get the flag present in the `/flag` file 
+   ```bash
+   
+   ```
+
+### What i learned:-
+   I learned that to search for a directory we can use the `find` command which takes optional arguments describing the search criteria and the search location, if we don't specify a search criteria, then `find` matches every file and if we don't specify a search location, `find` uses the current working directory.
+
+   ### Refference :-
+   [pwn.college Linux Luminarium-3.Symbolic links](https://youtu.be/m55AtwjBXpE?list=PL-ymxv0nOtqqRAz1x90vxNbhmSkeYxHVC).
