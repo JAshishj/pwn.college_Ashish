@@ -42,33 +42,38 @@
    The challenge asks us to read the manual of the `challenge` and invoke the it with a secret option to get the flag.
    
 ## My solve:-
-   **My flag** :-``
+   **My flag** :-`pwn.college{A_xlqRk7RORAaBR4g5LdCeuCpCU.QX0EDO0wCNxAzNzEzW}`
 
-   So, the challenge asked us to get the flag by invoking the `/challenge` with a secret option which we have to find in the manual of the `challenge` by using the `man` command, hence i opened the shell and used the `man` command with `challenge` as the 
+   So, the challenge asked us to get the flag by invoking the `/challenge` with a secret option which we have to find in the manual of the `challenge` by using the `man` command, hence i opened the shell and used the `man` command with `challenge` as it's argument and read through it and found the secret option is `--xlqkag NUM` with the description that it would give the flag if the NUM was 745, hecne i invoked `/challenge/challenge` which was the name given in he manual and provided it with the option `--xlqkag 745` and got the flag. 
    ```bash
-   
+   hacker@man~reading-manuals:~$ man challenge
+   hacker@man~reading-manuals:~$ /challenge/challenge --xlqkag 745
+   Correct usage! Your flag: pwn.college{A_xlqRk7RORAaBR4g5LdCeuCpCU.QX0EDO0wCNxAzNzEzW}
    ```
 
 ### What i learned:-
-   I learned that shell commands can take multiple arugments and also that arguments can also take arguments.
+   I learned that `man` commands invoked with the name of the command we want the manual of as an argument provides the full manual of that command in the shell, i also learned that it only works if we provide the name and not the path and that we can scroll through the manual using the up/dowm arrow key and use `q` to quit.
    
 ### Refference :-
    None.
 
 
- # **3.<ins>Learning complex usage</ins>**:-
-   The challenge gives us to read the manual of the `challenge` and invoke the it with a secret option to get the flag.
+ # **4.<ins>Searching manuals</ins>**:-
+   The challenge asks us to find the option that will give us the flag by reading the `challenge` manual page.
    
 ## My solve:-
-   **My flag** :-``
+   **My flag** :-`pwn.college{8os_oXfAAvQAmOK0ckhjKs75JzH.QX1EDO0wCNxAzNzEzW}`
 
-   So, the challenge asked us to get the flag by invoking the `/challenge` with a secret option which we have to find in the manual of the `challenge` by using the `man` command, hence  
+   So, the challenge asked us to find the option that would give the flag by reading the manual of the `challenge`, hence i opened the shell and used the `man` command along with the `challenge` as the argument to get the manual of the `challenge` and then used `/` to search word `flag` in the manual as the description of the correct option should have the word `flag` in it and then got the option `--ko` in the second result which i got by hitting `n` whose description said that it would give the flag hence i invoked `/challenge/challenge` with the `--ko` argument and gor the flag.
    ```bash
-   
+   hacker@man~searching-manuals:~$ man challenge
+   hacker@man~searching-manuals:~$ /challenge/challenge  --ko
+   Initializing...
+   Correct usage! Your flag: pwn.college{8os_oXfAAvQAmOK0ckhjKs75JzH.QX1EDO0wCNxAzNzEzW}
    ```
 
 ### What i learned:-
-   I learned that shell commands can take multiple arugments and also that arguments can also take arguments.
+   I learned that we can scroll through the manual using the up/dowm arrow key and use `q` to quit and use the `/` to search and `?` to search backwards and hit `n` to go to the next result and `N` to go to the previous result.
    
 ### Refference :-
    None.
