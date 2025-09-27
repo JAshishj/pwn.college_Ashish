@@ -79,7 +79,7 @@
    None.
 
 
-   # **4.<ins>Searching manuals</ins>**:-
+# **5.<ins>Searching for manuals</ins>**:-
    The challenge asks us to find the hidden challenge man page which will tell us how to use `/challenge/challenge` by reading the `man` page manual by doing: `man man` then get the flag.
    
 ## My solve:-
@@ -97,6 +97,35 @@
 
 ### What i learned:-
    I learned that we can read the manual page of `man` by using `man man` command which would teach us advanced usage of the `man` command itself, i also learned that `man` command has many options as arguments which can help us get the required manual very easily.
+   
+### Refference :-
+   None.
+
+
+ # **6.<ins>Helpful programs</ins>**:-
+   The challenge asks us to use the `--help` option to get the programs documentation and then get the flag.
+   
+## My solve:-
+   **My flag** :-`pwn.college{gBLq72whpFAEECboebB_u4FionX.QX3IDO0wCNxAzNzEzW}`
+
+   So, the challenge asked us to use the `--help` option to get the documentaion of the program, hence i opened the shell and entered the `/challenge/challenge` along with the option `--help` and got it's documentation, there there were two options which were requiered to get the flag those are `-g` which would give the flag if provided with correct value and `-p` which would print the the value requiered by the `-g` option to print the flag, hence i first used the `-p` option which gave me the value 724 and then i used the `-g` option and provided it with this value and got the flag.
+   ```bash
+   hacker@man~helpful-programs:~$ /challenge/challenge --help
+   usage: a challenge to make you ask for help [-h] [--fortune] [-v] [-g GIVE_THE_FLAG] [-p]
+   optional arguments:
+      -h, --help            show this help message and exit
+      --fortune             read your fortune
+      -v, --version         get the version number
+      -g GIVE_THE_FLAG, --give-the-flag GIVE_THE_FLAG, get the flag, if given the correct value
+      -p, --print-value     print the value that will cause the -g option to give you the flag}
+   hacker@man~helpful-programs:~$ /challenge/challenge -p
+   The secret value is: 724
+   hacker@man~helpful-programs:~$ /challenge/challenge -g 724
+   Correct usage! Your flag: pwn.college{gBLq72whpFAEECboebB_u4FionX.QX3IDO0wCNxAzNzEzW}
+   ```
+
+### What i learned:-
+   I learned that we could also get the documentation of a program by using the `--help` option along with it.
    
 ### Refference :-
    None.
