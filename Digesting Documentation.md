@@ -83,15 +83,20 @@
    The challenge asks us to find the hidden challenge man page which will tell us how to use `/challenge/challenge` by reading the `man` page manual by doing: `man man` then get the flag.
    
 ## My solve:-
-   **My flag** :-``
+   **My flag** :-`pwn.college{kC0jL8gk9q9ZtaWJrw7H8gZbG9a.QX2EDO0wCNxAzNzEzW}`
 
-   So, the challenge asked us to find the hidden challenge man page by reading the `man` manual page  by using the `man man` command which would tell me how to ues the `/challenge/challenge` to get the flag hence i opened the shell and used the `man man` command 
+   So, the challenge asked us to find the hidden challenge man page by reading the `man` manual page  by using the `man man` command which would tell me how to ues the `/challenge/challenge` to get the flag hence i opened the shell and used the `man man` command where i found a option `-k` which would take a word or phrase and print out all the manual which contain that word or phrase in it's name or description hence i gave it the string `challenge` by looking at the hint provided by the challenge and found that `kjgkqtarwg` is the name of the hidden man page hence i read it using the `man` command and got the by using `-- kjgkqt NUM` with the description that it would give the flag if the NUM was 089, hecne i invoked `/challenge/challenge` which was the name given in he manual and provided it with the option `--kjgkqt 089` and got the flag.
    ```bash
-  
+   hacker@man~searching-for-manuals:~$ man man
+   hacker@man~searching-for-manuals:~$ man -k challenge
+   kjgkqtarwg (1)       - print the flag!
+   hacker@man~searching-for-manuals:~$ man kjgkqtarwg
+   hacker@man~searching-for-manuals:~$ /challenge/challenge --kjgkqt 089
+   Correct usage! Your flag: pwn.college{kC0jL8gk9q9ZtaWJrw7H8gZbG9a.QX2EDO0wCNxAzNzEzW}
    ```
 
 ### What i learned:-
-   I learned that we can read the manual page of `man` by using `man man` command which would teach us advanced usage of the `man` command itself.
+   I learned that we can read the manual page of `man` by using `man man` command which would teach us advanced usage of the `man` command itself, i also learned that `man` command has many options as arguments which can help us get the required manual very easily.
    
 ### Refference :-
    None.
