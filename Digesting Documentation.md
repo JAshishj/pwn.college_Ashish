@@ -77,3 +77,22 @@
    
 ### Refference :-
    None.
+
+
+   # **4.<ins>Searching manuals</ins>**:-
+   The challenge asks us to find the hidden challenge man page which will tell us how to use `/challenge/challenge` by reading the `man` page manual by doing: `man man` then get the flag.
+   
+## My solve:-
+   **My flag** :-``
+
+   So, the challenge asked us to find the hidden challenge man page by reading the `man` manual page  by using the `man man` command which would tell me how to ues the `/challenge/challenge` to get the flag hence i opened the shell and used the `man man` command 
+   ```bash
+  
+   ```
+
+### What i learned:-
+   I learned that we can read the manual page of `man` by using `man man` command which would teach us advanced usage of the `man` command itself.
+   
+### Refference :-
+   None.
+
