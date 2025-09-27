@@ -44,7 +44,7 @@
 ## My solve:-
    **My flag** :-`pwn.college{Y-S1QR1KGH-XXras6PoOSue8NJ7.QXzIDO0wCNxAzNzEzW}`
 
-   So, the challenge asked us to change our directory to `/challenge/files`which contains a bunch of files and then run `/challenge/run` ith a single argument that `[]` globs into `file_b`, `file_a`, `file_s`, and `file_h`, hence i opened the shell and changed my directory to `/challenge/files` , then i ran the `/challenge/run` with `[bash]` as it's argument and got the flag.
+   So, the challenge asked us to change our directory to `/challenge/files`which contains a bunch of files and then run `/challenge/run` ith a single argument that `[]` globs into `file_b`, `file_a`, `file_s`, and `file_h`, hence i opened the shell and changed my directory to `/challenge/files` , then i ran the `/challenge/run` with `file_[bash]` as it's argument and got the flag.
    ```bash
    hacker@globbing~matching-with-:~$ cd /challenge/files
    hacker@globbing~matching-with-:/challenge/files$ /challenge/run file_[bash]
