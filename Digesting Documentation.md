@@ -130,3 +130,31 @@
 ### Refference :-
    None.
 
+
+# **7.<ins>Help for builtins</ins>**:-
+   The challenge asks us to lookup the `help` of the bulitin shell command `challenge` to figure out the secret value to pass to it to get the flag.
+   
+## My solve:-
+   **My flag** :-`pwn.college{8r7l-oY3mE7_v1OaPiE1WRLOBx1.QX0ETO0wCNxAzNzEzW}`
+
+   So, the challenge asked us to use the `help` command on the builtin shell command `challenge` to get the value to pass to it to get the flag, hence i open the shell and entered the `help` command and provided `challenge` as it's argument which provided me it's documentation from which i got the value to pass to it i.e NUM, then i entered the `challenge` command and passed NUM to it and got the flag.
+   ```bash
+   hacker@man~help-for-builtins:~$ help challenge
+   challenge: challenge [--fortune] [--version] [--secret SECRET]
+       This builtin command will read you the flag, given the right arguments! 
+       Options:
+        --fortune         display a fortune
+        --version         display the version
+        --secret VALUE    prints the flag, if VALUE is correct
+        You must be sure to provide the right value to --secret. That value
+        is "8r7l-oY3".
+   hacker@man~help-for-builtins:~$ challenge --secret 8r7l-oY3
+   Correct! Here is your flag!
+   pwn.college{8r7l-oY3mE7_v1OaPiE1WRLOBx1.QX0ETO0wCNxAzNzEzW}
+   ```
+
+### What i learned:-
+   I learned that Some commands, rather than being programs with `man` pages and `help` options, are built into the shell itself and these are called builtins, i also learned that builtins are invoked just like commands, but the shell handles them internally instead of launching other programs and that we can get a list of shell builtins by running the builtin `help` command  .
+   
+### Refference :-
+   None.
