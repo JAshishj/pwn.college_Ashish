@@ -90,3 +90,80 @@
 
 ### Refference :-
    None
+
+
+# **4.<ins>Redirecting errors</ins>**:-
+   The challenge asks us to redirect the output of `/challenge/run`, like before, to `myflag`, and the "errors" in our case, the instructions to `instructions`but there will be nothing printed to the terminal, because we have redirected everything and we can find the instructions/feedback in `instructions` and the flag in `myflag`.
+## My solve:-
+   **My flag** :-`pwn.college{gCJ-T2rvbjCBfJmBmnVLPJtsSWr.QX3YTN0wCNxAzNzEzW}`
+
+   So, the challenge asked us to redirect the output of `/challenge/run` to `myflag`, and the "errors" to `instructions` and get the instructions from `instructions` and the flag from `myflag`, hence i opened the shell and redirected the output and errors of `/challenge/run` to `myflag` and `instructions` respectively using `>` and `2>` respectively, then i read the `myflag` and got the flag.
+   ```bash
+   hacker@piping~redirecting-errors:~$ /challenge/run > myflag 2> instructions
+   hacker@piping~redirecting-errors:~$ cat myflag
+   [FLAG] Here is your flag:
+   [FLAG] pwn.college{gCJ-T2rvbjCBfJmBmnVLPJtsSWr.QX3YTN0wCNxAzNzEzW}
+   ```
+
+### What i learned:-
+   I learned that just like standard output, we can also redirect the error channel of commands.I also learened taht a File Descriptor (FD) is a number that describes a communication channel in Linux i.e FD 0: Standard Input, FD 1: Standard Output, FD 2: Standard Error.When we redirect process communication, we do it by FD number, though some FD numbers are implicit. For example, a `>` without a number implies `1>`, which redirects FD 1 (Standard Output). i also came to know that we can redirect multiple file descriptors at the same time.
+
+### Refference :-
+   None
+
+
+# **5.<ins>Redirecting input</ins>**:-
+   The challenge asks us to 
+## My solve:-
+   **My flag** :-`pwn.college{Qr46vuRvValrhVljEIda1cMlgwP.QXwcTN0wCNxAzNzEzW}`
+
+   So, the challenge asked us to use `/challenge/run`, which will require us to redirect the `PWN` file to it and have the `PWN` file contain the value `COLLEGE` and to write that value to the `PWN `file, recall the prior challenge on output redirection from echo, hence i opened the shell and first redirected `COLLEGE` to the `PWN` file and the redirected it to `/challenge/run` using `<` and got the flag.
+   ```bash
+   hacker@piping~redirecting-input:~$ echo COLLEGE > PWN
+   hacker@piping~redirecting-input:~$ /challenge/run < PWN
+   Reading from standard input...
+   Correct! You have redirected the PWN file into my standard input, and I read
+   the value 'COLLEGE' out of it!
+   Here is your flag:
+   pwn.college{Qr46vuRvValrhVljEIda1cMlgwP.QXwcTN0wCNxAzNzEzW}
+   ```
+
+### What i learned:-
+   I learned that just like how we can redirect output from programs, we can also redirect input to programs whichis done using `<`. 
+
+### Refference :-
+   None
+
+
+# **1.<ins>Grepping stored results</ins>**:-
+   The challenge asks us to 
+## My solve:-
+   **My flag** :-``
+
+   So, the challenge asked us to
+   ```bash
+  
+   ```
+
+### What i learned:-
+   I learned that 
+
+### Refference :-
+   None
+
+
+# **1.<ins></ins>**:-
+   The challenge asks us to 
+## My solve:-
+   **My flag** :-``
+
+   So, the challenge asked us to
+   ```bash
+  
+   ```
+
+### What i learned:-
+   I learned that 
+
+### Refference :-
+   None
