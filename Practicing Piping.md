@@ -251,13 +251,48 @@
 
 
 # **9.<ins>Filtering with grep -v</ins>**:-
+   The challenge asks us to run `/challenge/run` which will output the flag to stdout, but it will also output over 1000 decoy flags containing the word `DECOY` somewhere in the flag which are mixed in with the real flag and we'll need to filter out the decoys while keeping the real flag by using `grep -v` to filter out all the lines containing `DECOY` and get the real flag.
+## My solve:-
+   **My flag** :-`pwn.college{sqDX0RzenOT1vlEwK8AzclENKSx.0FOxEzNxwCNxAzNzEzW}`
+
+   So, the challenge asked us to run `/challenge/run` which will output the flag to stdout along with over 1000 decoy flags containing the word `DECOY` and we have to use the `grep -v` command to filter out all the lines containing `DECOY` and get the real flag, hence i opened the shell and ran `/challenge/run` and provided it's output to `grep` by using `|` pipe operator and used the `-v` option of grep to fillter out all the lines containing `DECOY` and got the flag.
+   ```bash
+   hacker@piping~filtering-with-grep-v:~$ /challenge/run | grep -v DECOY
+   pwn.college{sqDX0RzenOT1vlEwK8AzclENKSx.0FOxEzNxwCNxAzNzEzW}
+   ```
+
+### What i learned:-
+   I learned that `grep` has a option `-v` (invert match), which shows lines that do not match a pattern which is the opposite of the normal `grep` command.
+
+### Refference :-
+   None
+
+
+# **10.<ins>Duplicating piped data using tee</ins>**:-
+   The challenge asks us to run `/challenge/pwn` which must be piped into `/challenge/college`, but we'll need to intercept the data to see what `pwn` needs from us to get the flag.
+## My solve:-
+   **My flag** :-``
+
+   So, the challenge asked us to run `/challenge/pwn` which must be piped into `/challenge/college`, but we'll need to intercept the data to see what `pwn` needs from us to get the flag, hence i opened the shell and ran `/challenge/pwn` and piped it to `/challenge/college` and also used `tee` command to print it to the stdout a
+   ```bash
+  
+   ```
+
+### What i learned:-
+   I learned that `tee` command duplicates data flowing through our pipes to any number of files provided on the command line.
+
+### Refference :-
+   None
+
+
+# **11.<ins>Process substitution for input</ins>**:-
    The challenge asks us to 
 ## My solve:-
    **My flag** :-``
 
    So, the challenge asked us to
    ```bash
-   
+  
    ```
 
 ### What i learned:-
@@ -267,7 +302,7 @@
    None
 
 
-# **10.<ins></ins>**:-
+# **12.<ins></ins>**:-
    The challenge asks us to 
 ## My solve:-
    **My flag** :-``
