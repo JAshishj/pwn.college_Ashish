@@ -365,7 +365,7 @@
 ## My solve:-
    **My flag** :-``
 
-   So, the challenge asked us to create a `/tmp/flag_fifo` file and redirect the stdout of `/challenge/run`, hence i opened the shell and crated the FIFO `/tmp/flag_fifo` using the `mkfifo` command and then redirected the output of ~/challenge/run` to it and catted it, and got the flag. 
+   So, the challenge asked us to create a `/tmp/flag_fifo` file and redirect the stdout of `/challenge/run`, hence i opened the shell and crated the FIFO `/tmp/flag_fifo` using the `mkfifo` command and then redirected the output of `/challenge/run` to it and catted it, and got the flag. 
    ```bash
   
    ```
