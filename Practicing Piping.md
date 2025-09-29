@@ -363,11 +363,24 @@
 # **14.<ins>Named pipes</ins>**:-
    The challenge asks us to create a `/tmp/flag_fifo` file and redirect the stdout of `/challenge/run` to it and if we're successful, `/challenge/run` will write the flag into the FIFO. 
 ## My solve:-
-   **My flag** :-``
+   **My flag** :-`pwn.college{o3-f11W4K9cl0LnxMO5LPjU_kBC.01MzMDOxwCNxAzNzEzW}`
 
    So, the challenge asked us to create a `/tmp/flag_fifo` file and redirect the stdout of `/challenge/run`, hence i opened the shell and crated the FIFO `/tmp/flag_fifo` using the `mkfifo` command and then redirected the output of `/challenge/run` to it and catted it, and got the flag. 
    ```bash
-  
+   terminal_1:-
+   hacker@piping~named-pipes:~$ mkfifo /tmp/flag_fifo
+   hacker@piping~named-pipes:~$ /challenge/run > /tmp/flag_fifo
+   You're successfully redirecting /challenge/run to a FIFO at /tmp/flag_fifo!
+   Bash will now try to open the FIFO for writing, to pass it as the stdout of
+   /challenge/run. Recall that operations on FIFOs will *block* until both the
+   read side and the write side is open, so /challenge/run will not actually be
+   launched until you start reading from the FIFO!
+
+   terminal_2:-
+   hacker@piping~named-pipes:~$ cat /tmp/flag_fifo
+   You've correctly redirected /challenge/run's stdout to a FIFO at
+   /tmp/flag_fifo! Here is your flag:
+   pwn.college{o3-f11W4K9cl0LnxMO5LPjU_kBC.01MzMDOxwCNxAzNzEzW}
    ```
 
 ### What i learned:-
