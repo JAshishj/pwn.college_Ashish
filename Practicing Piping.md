@@ -271,11 +271,24 @@
 # **10.<ins>Duplicating piped data using tee</ins>**:-
    The challenge asks us to run `/challenge/pwn` which must be piped into `/challenge/college`, but we'll need to intercept the data to see what `pwn` needs from us to get the flag.
 ## My solve:-
-   **My flag** :-``
+   **My flag** :-`pwn.college{I2B3OdgAu0NHmQ-KzBceFzWuFzY.QXxITO0wCNxAzNzEzW}`
 
-   So, the challenge asked us to run `/challenge/pwn` which must be piped into `/challenge/college`, but we'll need to intercept the data to see what `pwn` needs from us to get the flag, hence i opened the shell and ran `/challenge/pwn` and piped it to `/challenge/college` and also used `tee` command to print it to the stdout a
+   So, the challenge asked us to run `/challenge/pwn` which must be piped into `/challenge/college`, but we'll need to intercept the data to see what `pwn` needs from us to get the flag, hence i opened the shell and ran `/challenge/pwn` and piped and used `tee` command  to `/challenge/challenge` so that i could know what the program needed so that it can present the flag and got `I2B3OdgA` as the option to be passed hence i passed the option and piped it to the `/challenge/college` and got the flag.
    ```bash
-  
+   hacker@piping~duplicating-piped-data-with-tee:~$ /challenge/pwn | tee /challenge/challenge | /challenge/college
+   Processing...
+   The input to 'college' does not contain the correct secret code! This code
+   should be provided by the 'pwn' command. HINT: use 'tee' to intercept the
+   output of 'pwn' and figure out what the code needs to be.
+   hacker@piping~duplicating-piped-data-with-tee:~$ cat /challenge/challenge
+   Usage: /challenge/pwn --secret [SECRET_ARG]
+
+   SECRET_ARG should be "I2B3OdgA"
+   hacker@piping~duplicating-piped-data-with-tee:~$ /challenge/pwn --secret I2B3OdgA | /challenge/college
+   Processing...
+   Correct! Passing secret value to /challenge/college...
+   Great job! Here is your flag:
+   pwn.college{I2B3OdgAu0NHmQ-KzBceFzWuFzY.QXxITO0wCNxAzNzEzW}
    ```
 
 ### What i learned:-
@@ -286,34 +299,79 @@
 
 
 # **11.<ins>Process substitution for input</ins>**:-
-   The challenge asks us to 
+   The challenge asks us to `diff` two sets of command outputs: `/challenge/print_decoys`, which will print a bunch of decoy flags, and `/challenge/print_decoys_and_flag` which will print those same decoys plus the real flag use process substitution with `diff` to compare the outputs of these two programs to get the flag.
 ## My solve:-
-   **My flag** :-``
+   **My flag** :-`pwn.college{YBVR3Rw811al2LvkXeXAJxnBz6U.0lNwMDOxwCNxAzNzEzW}`
 
-   So, the challenge asked us to
+   So, the challenge asked us to `diff` two sets of command outputs: `/challenge/print_decoys`, which will print a bunch of decoy flags, and `/challenge/print_decoys_and_flag` which will print those same decoys plus the real flag using process substitution, hence i opened the shell and used the `diff` command and used process substitution `<( )` on `/challeng/print_decoys` and `/challenge/print_decoys_and_flag` to directly provide there output to the `diff` command and got the flag.
    ```bash
-  
+   hacker@piping~process-substitution-for-input:~$ diff <(/challenge/print_decoys) <(/challenge/print_decoys_and_flag)
+   28a29
+   > pwn.college{YBVR3Rw811al2LvkXeXAJxnBz6U.0lNwMDOxwCNxAzNzEzW}
    ```
 
 ### What i learned:-
-   I learned that 
+   I learned that linux follows the philosophy that "everything is a file". That is, the system strives to provide file-like access to most resources, including the input and output of running programs! The shell follows this philosophy, allowing you to, for example, use any utility that takes file arguments on the command line and hook it up to the output of programs, as you learned in the previous few levels.I also learned that  we can go further, and hook input and output of programs to arguments of commands. This is done using Process Substitution using `<(command)` and  when we write `<(command)`, bash will run the command and hook up its output to a temporary file that it will create and that this isn't a real file, it's what's called a named pipe, in that it has a file name.
 
 ### Refference :-
    None
 
 
-# **12.<ins></ins>**:-
-   The challenge asks us to 
+# **12.<ins>Writing to multiple programs</ins>**:-
+   In this challenge we have `/challenge/hack`, `/challenge/the`, and `/challenge/planet` and we have to run the `/challenge/hack command`, and duplicate its output as input to both the `/challenge/the` and the `/challenge/planet` commands to get the flag.
+## My solve:-
+   **My flag** :-`pwn.college{EM-q3meC97e7iQesYRcP57gB-eb.QXwgDN1wCNxAzNzEzW}`
+
+   So, the challenge asked us to run the `/challenge/hack command`, and duplicate its output as input to both the `/challenge/the` and the `/challenge/planet` commands, hence i opened the shell and ran `/challenge/hack command` and provided it's output to both `/challenge/the` and `/challenge/planet` as their inputs using the `tee` command and process substitution for input and got the flag.
+   ```bash
+   hacker@piping~writing-to-multiple-programs:~$ /challenge/hack | tee >(/challenge/the) >(/challenge/planet)
+   This secret data must directly and simultaneously make it to /challenge/the and
+   /challenge/planet. Don't try to copy-paste it; it changes too fast.
+   2613422961436424292
+   Congratulations, you have duplicated data into the input of two programs! Here
+   is your flag:
+   pwn.college{EM-q3meC97e7iQesYRcP57gB-eb.QXwgDN1wCNxAzNzEzW}
+   ```
+
+### What i learned:-
+   I learned that for writing to a command output process substitution we have to use `>(command)`, i also learned that we can use the `tee` command and process substitution for input to provide the output of one program as the input to many programs.
+
+### Refference :-
+   None
+
+
+# **13.<ins>Split-piping stderr and stdout</ins>**:-
+   The challenge asks us to combine our knowledge of `>()`, `2>`, and `|` and provided the following data:- `/challenge/hack`: this produces data on stdout and stderr `/challenge/the`: you must redirect hack's stderr to this program `/challenge/planet`: you must redirect hack's stdout to this program to get the flag.
+## My solve:-
+   **My flag** :-`pwn.college{sVZlYelMNmiK7R47RyxZRVSstgc.QXxQDM2wCNxAzNzEzW}`
+
+   So, the challenge asked us to run `/challenge/hack` which gives data on stdout and stderr, and then redirect hack's stderr `/challenge/the`, and redirect hack's stdout to `/challenge/planet`, hence i opened the shell and ran `/challenge/hack` and `|` to provide it's output to both the files and used`2>` and  `>()` to respective file to provide it with stderr of `/challenge/hack` and stdout of `/challenge/hack` respectively and got the flag.
+   ```bash
+   hacker@piping~split-piping-stderr-and-stdout:~$ /challenge/hack 2> >(/challenge/the) | /challenge/planet
+   Congratulations, you have learned a redirection technique that even experts
+   struggle with! Here is your flag:
+   pwn.college{sVZlYelMNmiK7R47RyxZRVSstgc.QXxQDM2wCNxAzNzEzW}
+   ```
+
+### What i learned:-
+   I learned that how to redirect the stderr and stout of the same command by using pipe.
+
+### Refference :-
+   None
+
+
+# **14.<ins>Named pipes</ins>**:-
+   The challenge asks us to create a `/tmp/flag_fifo` file and redirect the stdout of `/challenge/run` to it and if we're successful, `/challenge/run` will write the flag into the FIFO. 
 ## My solve:-
    **My flag** :-``
 
-   So, the challenge asked us to
+   So, the challenge asked us to create a `/tmp/flag_fifo` file and redirect the stdout of `/challenge/run`, hence i opened the shell and crated the FIFO `/tmp/flag_fifo` using the `mkfifo` command and then redirected the output of ~/challenge/run` to it and catted it, and got the flag. 
    ```bash
   
    ```
 
 ### What i learned:-
-   I learned that 
+   I learned that we can also create our own persistent named pipes that stick around on the filesystem and that these are called FIFOs, which stands for First (byte) In, First (byte) Out.I also learned that we can create a FIFO using the `mkfifo` command.I also came to know that, we control where FIFOs are created and that, they persist until we delete them, and any process can write to them by path, and that we can see them with `ls` and examine them like files,and that FIFOs pass data directly between processes in memory - nothing is saved to disk meaning that, once data is read from a FIFO, it's gone and also that writers block until the readers are ready, and vice-versa.
 
 ### Refference :-
    None
