@@ -48,7 +48,7 @@
    ```
 
 ### What i learned:-
-   I learned that if we want to give space in the value that we are assigning to the variable then we have to enter the whole value in double quotes `""`.
+   I learned that if we want to give space in between the values, then we have to enter the whole value in double quotes `" "`.
 
 ### Refference :-
    None
@@ -76,7 +76,7 @@
    ```
 
 ### What i learned:-
-   I learned that `export` is used to make the variable useable outside the shell session on which it was assigned.
+   I learned that `export` is used to make the variable useable outside the shell session on which it was assigned, i also learned that when we export our variables, they are passed into the environment variables of child processes.
 
 ### Refference :-
    None
@@ -116,35 +116,61 @@
    None
 
 
-# **6.<ins></ins>**:-
-   The challenge asks us to 
+# **6.<ins>Storing command output</ins>**:-
+   The challenge asks us to read the output of the `challenge/run` command directly into a variable called `PWN`, and it will contain the flag.
 ## My solve:-
-   **My flag** :-``
+   **My flag** :-`pwn.college{MmFIBBUVdEPZtSe3sgF5TZjT6V8.QX1cDN1wCNxAzNzEzW}`
 
-   So, the challenge asked us to
+   So, the challenge asked us to read the output of the `/challenge/run` command directly into a variable called `PWN`, and it will contain the flag, hence i opened the shell and used  command substitution to read the output of the `challenge/run` command directly into a variable called `PWN` and the printed the variable `PWN` using the `ecoh` command and got the flag.
    ```bash
-  
+   hacker@variables~storing-command-output:~$ PWN=$(/challenge/run)
+   Congratulations! You have read the flag into the PWN variable. Now print it out
+   and submit it!
+   hacker@variables~storing-command-output:~$ echo $PWN
+   pwn.college{MmFIBBUVdEPZtSe3sgF5TZjT6V8.QX1cDN1wCNxAzNzEzW}
    ```
 
 ### What i learned:-
-   I learned that 
+   I learned that command substitution `$()` is often used to store the output of some command into a variable.
 
 ### Refference :-
    None
 
 
-# **7.<ins></ins>**:-
-   The challenge asks us to 
+# **7.<ins>Reading input</ins>**:-
+   The challenge asks us to to use `read` builtin to set the `PWN` variable to the value `COLLEGE` to get the flag. 
 ## My solve:-
-   **My flag** :-``
+   **My flag** :-`pwn.college{I2Apt509DBTjmmmgOxrw-BbqqH9.QX4cTN0wCNxAzNzEzW}`
 
-   So, the challenge asked us to
+   So, the challenge asked us to to use `read` builtin to set the `PWN` variable to the value `COLLEGE`, hence i opened the shell and used the `read` command and entered the value `COLLEGE` in the standard input and stored that in the variable `PWN` and got the flag. 
    ```bash
-  
+   hacker@variables~reading-input:~$ read PWN
+   COLLEGE
+   You've set the PWN variable properly! As promised, here is the flag:
+   pwn.college{I2Apt509DBTjmmmgOxrw-BbqqH9.QX4cTN0wCNxAzNzEzW}
    ```
 
 ### What i learned:-
-   I learned that 
+   I learned that `read` a builtin command which reads the input provided by the user through the standard input into a variable. 
+
+### Refference :-
+   None
+
+
+# **8.<ins>Reading files</ins>**:-
+   The challenge asks us to read `/challenge/read_me` into the `PWN` environment variable in one command to get the flag.
+## My solve:-
+   **My flag** :-`pwn.college{EanvXit7ktK8J6FBsBTddLh1O6b.QXwIDO0wCNxAzNzEzW}`
+
+   So, the challenge asked us to read `/challenge/read_me` into the `PWN` variable in one command, hence i opened the shell and used the `read` command and redirected `/challenge/read_me`'s input using`<` to `PWN` variable and got the flag.
+   ```bash
+   hacker@variables~reading-files:~$ read PWN < /challenge/read_me
+   You've set the PWN variable properly! As promised, here is the flag:
+   pwn.college{EanvXit7ktK8J6FBsBTddLh1O6b.QXwIDO0wCNxAzNzEzW}
+   ```
+
+### What i learned:-
+   I learned that we can use `read` command to read a file into an environment variable, using unique ways like redirecting it's input using `<`.
 
 ### Refference :-
    None
