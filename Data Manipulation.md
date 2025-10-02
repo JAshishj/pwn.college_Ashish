@@ -36,18 +36,19 @@
    None
 
 
-# **3.<ins></ins>**:-
-   The challenge asks us to 
+# **3.<ins>Deleting newlines</ins>**:-
+   The challenge will inject a bunch of newlines into the flag and asks us to delete them with `tr`'s `-d` flag and the escaped newline specification to get the flag.
 ## My solve:-
-   **My flag** :-``
+   **My flag** :-`pwn.college{Ir5RLBO5jVAPbX37suJiLfozwk0.0VNxEzNxwCNxAzNzEzW}`
 
-   So, the challenge asked us to
+   So, the challenge asked us to use the `tr` commands `-d` option to delete the newline characters i.e `"\n"`, hence i opened the shell and ran `/challenge/run` and piped it's output to `tr` and used the `-d` option on `"\n"` to delete them and got the flag.
    ```bash
-  
+   hacker@data~deleting-newlines:~$ /challenge/run | tr -d "\n"
+   Your line-split flag: pwn.college{Ir5RLBO5jVAPbX37suJiLfozwk0.0VNxEzNxwCNxAzNzEzW}
    ```
 
 ### What i learned:-
-   I learned that 
+   I learned that to add new line we have to use `"\n"` character.
 
 ### Refference :-
    None
