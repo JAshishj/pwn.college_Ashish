@@ -124,17 +124,17 @@ Run `/challenge/run` to get the flag without being overwhelmed by decoys (you do
 
 
 # **5.<ins></ins>**:-
-   The challenge asks us to 
+   This challeng's `run` wants to see another copy of itself running and using the same terminal. Use the terminal to launch it, then suspend it, then launch another copy while the first is suspended! 
 ## My solve:-
    **My flag** :-``
 
-   So, the challenge asked us to
+   So, the challenge asked us to run `/challenge/run` and then suspend it and then again run `/challenge/run`, hence i opened he shell and ran `/challenge/run` and suspended it using the hotkey `Ctrl-Z` and then ran `/chllenge/run` again and got the flag.
    ```bash
   
    ```
 
 ### What i learned:-
-   I learned that 
+   I learned that we can suspend processes to the background with the hotkey `Ctrl-Z`.
 
 ### Refference :-
    None
