@@ -79,7 +79,51 @@
    None
 
 
-# **4.<ins></ins>**:-
+# **4.<ins>Killing misbehaving processes</ins>**:-
+   In this challenge, there's a decoy process that's hogging a critical resource - a named pipe (FIFO) at `/tmp/flag_fifo` into which `/challenge/run` wants to write our flag we need to kill this process.
+Our general workflow should be:
+Check what processes are running.
+Find `/challenge/decoy` in the list and figure out its process ID.
+kill it.
+Run `/challenge/run` to get the flag without being overwhelmed by decoys (you don't need to redirect its output; it'll write to the FIFO on its own).
+## My solve:-
+   **My flag** :-`pwn.college{80lPzpwSTi0OUgtonctLKGHpfPE.0FNzMDOxwCNxAzNzEzW}`
+
+   So, the challenge asked us to kill the `/challenge/decoy` process which is hogging the FIFO and then run `/challene/run`, hence i opened the shell and used the `ps -ef` command to find the PID of the process and terminated it using the `kill` command by passing the PID and then i ran `/challenge/run` which wrote the flag in the maned pipe `/tmp/flag_fifo`, then i catted it in another terminal and got the flag.
+   ```bash
+   terminal 1:-
+   hacker@processes~killing-misbehaving-processes:~$ ps -ef
+   UID          PID    PPID  C STIME TTY          TIME CMD
+   root           1       0  0 13:28 ?        00:00:00 /sbin/docker-init -- /nix/var/nix/profiles/dojo-workspace/bin/dojo-i
+   root           7       1  0 13:28 ?        00:00:00 /run/dojo/bin/sleep 6h
+   root         137       1  0 13:28 ?        00:00:00 /bin/bash /challenge/.init
+   root         138       1  0 13:28 ?        00:00:00 /bin/bash /challenge/.init
+   root         139       1  0 13:28 ?        00:00:00 su -c exec /challenge/decoy > /tmp/flag_fifo hacker
+   root         140     138  0 13:28 ?        00:00:00 sleep 6h
+   root         141     137  0 13:28 ?        00:00:00 sleep 6h
+   hacker       142     139  0 13:28 ?        00:00:00 /usr/bin/python /challenge/decoy
+   hacker       144       0  0 13:29 pts/0    00:00:00 /nix/store/0nxvi9r5ymdlr2p24rjj9qzyms72zld1-bash-interactive-5.2p37/
+   hacker       150     144  0 13:29 pts/0    00:00:00 /run/dojo/bin/bash --login
+   hacker       159       0  0 13:29 pts/1    00:00:00 /nix/store/0nxvi9r5ymdlr2p24rjj9qzyms72zld1-bash-interactive-5.2p37/
+   hacker       165     159  0 13:29 pts/1    00:00:00 /run/dojo/bin/bash --login
+   hacker       174     150  0 13:29 pts/0    00:00:00 ps -ef
+   hacker@processes~killing-misbehaving-processes:~$ kill 142
+   hacker@processes~killing-misbehaving-processes:~$ /challenge/run
+   Sending the flag to /tmp/flag_fifo!
+
+   terminal 2:-
+   hacker@processes~killing-misbehaving-processes:~$ cat /tmp/flag_fifo
+   pwn.college{80lPzpwSTi0OUgtonctLKGHpfPE.0FNzMDOxwCNxAzNzEzW}
+   ```
+
+### What i learned:-
+   I learned that sometimes, misbehaving processes can interfere with our work and these processes might need to be killed.
+
+### Refference :-
+   None
+
+
+# **5.<ins></ins>**:-
    The challenge asks us to 
 ## My solve:-
    **My flag** :-``
@@ -96,7 +140,7 @@
    None
 
 
-# **5.<ins></ins>**:-
+# **6.<ins></ins>**:-
    The challenge asks us to 
 ## My solve:-
    **My flag** :-``
