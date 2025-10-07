@@ -5,3 +5,6 @@ You must take the corrupted file and repair it to reveal the true code that will
 
 # **<ins>My solve</ins>**:-
   By reading the challenge it was clear that sonthing was corrupted in the file hence i opened it in the `HxD` hex editor provided in the discord, where it was written `M1D1` but the file was had the extention `.wav`, hence i provided the first 4 bytes to the llm `ChatGPT` and asked it if the header was correct or not for the MIDI file formate for which it replied that the bytes were not correct and it provided the correct bytes that should have been present, then i changed the first four bytes as given by it and then played it but did not get anything then i opened it in the software Audacity as it was provided in the discord and viewed the file in it and got the flag.
+
+# **<ins>What i learned</ins>**:-
+  I learned that files can have different header bytes that does not correspond to it's extention which we call corupted header, i also learned that we can fix this in any hex editor by directly changing the header bytes, i alos learned how to use the `HxD` hex editor, i also came to know that contents an be hidden in the music files which will only be visible when we view it in some music softwares and  under specific settings too.
