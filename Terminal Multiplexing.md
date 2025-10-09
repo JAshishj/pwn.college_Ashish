@@ -174,7 +174,7 @@ These windows are handled with different keyboard shortcuts, all starting with `
    None
 
 
-# **6.<ins></ins>**:-
+# **6.<ins>Switching windows (tmux)</ins>**:-
    For this challenge we've created a `tmux` session with two windows: Window 0 has the flag!, Window 1 has your warm welcome. 
 ## My solve:-
    **My flag** :-`pwn.college{I12ecdTcw751T8wmVBu0GAMetyT.0FM5IDOxwCNxAzNzEzW}`
