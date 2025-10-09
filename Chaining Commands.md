@@ -160,7 +160,7 @@
 
 
 # **9.<ins>Scripting with conditionals</ins>**:-
-   For this challenge, write a script at `/home/hacker/solve.sh` that: takes one argument and if the argument is "pwn", output "college" and for any other input, output nothing, once your script works correctly, run /challenge/run to get your flag!
+   For this challenge, write a script at `/home/hacker/solve.sh` that: takes one argument and if the argument is "pwn", output "college" and for any other input, output nothing, once your script works correctly, run `/challenge/run` to get your flag!
 ## My solve:-
    **My flag** :-`pwn.college{wUFsPiujhTDC2nnMKU3RzeE9G8u.0lNzMDOxwCNxAzNzEzW}`
 
@@ -183,11 +183,11 @@
 
 
 # **10.<ins>Scripting with default cases</ins>**:-
-   For this challenge, write a script at /home/hacker/solve.sh that: takes one argument, if the argument is "pwn", output "college", for any other input, output "nope", once your script works correctly, run /challenge/run to get your flag!
+   For this challenge, write a script at `/home/hacker/solve.sh` that: takes one argument, if the argument is "pwn", output "college", for any other input, output "nope", once your script works correctly, run `/challenge/run` to get your flag!
 ## My solve:-
    **My flag** :-`pwn.college{Urpj5KhiHKXNgWJqFilJ3ju18i7.01NzMDOxwCNxAzNzEzW}`
 
-   So, the challenge asked us to script at `/home/hacker/solve.sh` that: takes one argument and if the argument is "pwn", output "college" and for any other input output `nope` and then run `/challenge/run`, hence i opened the shell and created `solve.sh` shell script which takes one arguments and outputs `college` if the argument is `pwn` and outputs `nope` if it is not, using `nano` command and ran it using `bash` and passed the arguments `pwn` to check if the script was proper and got the output `college` and again ran it and this time passed it the argument `college` and got the output `nope` and then ran `/challenge/run` and got the flag.
+   So, the challenge asked us to write script at `/home/hacker/solve.sh` that: takes one argument and if the argument is "pwn", output "college" and for any other input output `nope` and then run `/challenge/run`, hence i opened the shell and created `solve.sh` shell script which takes one arguments and outputs `college` if the argument is `pwn` and outputs `nope` if it is not, using `nano` command and ran it using `bash` and passed the arguments `pwn` to check if the script was proper and got the output `college` and again ran it and this time passed it the argument `college` and got the output `nope` and then ran `/challenge/run` and got the flag.
    ```bash
    hacker@chaining~scripting-with-default-cases:~$ nano solve.sh
    hacker@chaining~scripting-with-default-cases:~$ bash solve.sh pwn
@@ -207,35 +207,61 @@
    None
 
 
-# **11.<ins></ins>**:-
-   The challenge asks us to 
+# **11.<ins>Scripting with multiple conditions</ins>**:-
+   For this challenge, write a script at `/home/hacker/solve.sh` that: takes one argument, if the argument is "hack", output "the planet", if the argument is "pwn", output "college", if the argument is "learn", output "linux", for any other input, output "unknown" once your script works correctly, run `/challenge/run` to get your flag.
 ## My solve:-
-   **My flag** :-``
+   **My flag** :-`pwn.college{gu0PK6SiWu00V8IRD28U5WSXfL8.0FOzMDOxwCNxAzNzEzW}`
 
-   So, the challenge asked us to
+   So, the challenge asked us to  write script at `/home/hacker/solve.sh` that: takes one argument and if the argument is "hack", output "the planet", if the argument is "pwn", output "college", if the argument is "learn", output "linux",and for any other input, output "unknown"  and then run `/challenge/run`, hence i opened the shell and created `solve.sh` shell script which takes one arguments and outputs `the planet` if the argument is `hack` and outputs `college` if the argument is `pwn` and outputs `linux` if the argument is `learn` and outputs `unknown` for any other argument, using `nano` command and ran it using `bash` and passed the arguments `hack` to check if the script was proper and got the output `the planet` and did the same for other conditions and then ran `/challenge/run` and got the flag.
    ```bash
-  
+   hacker@chaining~scripting-with-multiple-conditions:~$ nano solve.sh
+   hacker@chaining~scripting-with-multiple-conditions:~$ bash solve.sh hack
+   the planet
+   hacker@chaining~scripting-with-multiple-conditions:~$ bash solve.sh pwn
+   college
+   hacker@chaining~scripting-with-multiple-conditions:~$ bash solve.sh learn
+   linux
+   hacker@chaining~scripting-with-multiple-conditions:~$ bash solve.sh flag
+   unknown
+   hacker@chaining~scripting-with-multiple-conditions:~$ /challenge/run
+   Correct! Your script properly handles all the conditions with elif.
+   Here's your flag:
+   pwn.college{gu0PK6SiWu00V8IRD28U5WSXfL8.0FOzMDOxwCNxAzNzEzW}
    ```
 
 ### What i learned:-
-   I learned that 
+   I learned that we can use `elif` (short for `else if`) if we need to check multiple conditions, and that we do need a `then` after the `elif`, just like the `if`. As before the `else` at the end catches everything that didn't match.
 
 ### Refference :-
    None
 
 
-# **12.<ins></ins>**:-
-   The challenge asks us to 
+# **12.<ins>Reading shell scripts</ins>**:-
+   In this challenge `/challenge/run` is a shell script that requires you to put in a secret password, but that password is hardcoded into the script iself! Read the script (using, say, `cat`), figure out the password, and get the flag 
 ## My solve:-
-   **My flag** :-``
+   **My flag** :-`pwn.college{cybRHPJC0xPwxZKNfvWmBd-0eX6.0lMwgDOxwCNxAzNzEzW}`
 
-   So, the challenge asked us to
+   So, the challenge asked us to read the `/challenge/run` shell script and findd the secret password and the run the program by paassing it, hence i opened the shell and used the `cat` command and read the shell script of `/challenge/run` and found out that the secret password is `hack the PLANET`, then i ran `/challenge/run` and passed it as argument and got the flag. 
    ```bash
-  
+   hacker@chaining~reading-shell-scripts:~$ cat /challenge/run
+   #!/opt/pwn.college/bash
+
+   read GUESS
+   if [ "$GUESS" == "hack the PLANET" ]
+   then
+           echo "CORRECT! Your flag:"
+           cat /flag
+   else
+           echo "Read the /challenge/run file to figure out the correct password!"
+   fi
+   hacker@chaining~reading-shell-scripts:~$ /challenge/run
+   hack the PLANET
+   CORRECT! Your flag:
+   pwn.college{cybRHPJC0xPwxZKNfvWmBd-0eX6.0lMwgDOxwCNxAzNzEzW}
    ```
 
 ### What i learned:-
-   I learned that 
+   I learned that we're not the only one who writes shell scripts, and that they are very handy for doing simple "system-level" tasks, and are a common tool that developers and sysadmins reach for in fact, a surprising fraction of the programs on a typical Linux machine are shell scripts, and that we can read these scripts.
 
 ### Refference :-
    None
