@@ -345,7 +345,7 @@
 ## My solve:-
    **My flag** :-`pwn.college{sVZlYelMNmiK7R47RyxZRVSstgc.QXxQDM2wCNxAzNzEzW}`
 
-   So, the challenge asked us to run `/challenge/hack` which gives data on stdout and stderr, and then redirect hack's stderr `/challenge/the`, and redirect hack's stdout to `/challenge/planet`, hence i opened the shell and ran `/challenge/hack` and `|` to provide it's output to both the files and used`2>` and  `>()` to respective file to provide it with stderr of `/challenge/hack` and stdout of `/challenge/hack` respectively and got the flag.
+   So, the challenge asked us to run `/challenge/hack` which gives data on stdout and stderr, and then redirect hack's stderr `/challenge/the`, and redirect hack's stdout to `/challenge/planet`, hence i opened the shell and ran `/challenge/hack` and then provided it's stdout to `/challenge/planet` by using `|` and it's stderr to `/challenge/the` by redirecting the error of `/challenge/hack` to it by using process substitution and got the flag.
    ```bash
    hacker@piping~split-piping-stderr-and-stdout:~$ /challenge/hack 2> >(/challenge/the) | /challenge/planet
    Congratulations, you have learned a redirection technique that even experts
