@@ -137,6 +137,77 @@
 
 
 # **8.<ins>Scripting with arguments</ins>**:-
+   For this challenge, you need to write a script at `/home/hacker/solve.sh` that: Takes two arguments and Outputs them in REVERSE order (second argument first, then the first argument), and once your script works correctly, run `/challenge/run` to get your flag
+## My solve:-
+   **My flag** :-`pwn.college{Ukw0TKqklZw6ZTPJSPisxpm-GKO.0VNzMDOxwCNxAzNzEzW}`
+
+   So, the challenge asked us to write a script at `/home/hacker/solve.sh` that: Takes two arguments and Outputs them in REVERSE order and then run `/challenge/run`, hence i opened the shell and created `solve.sh` shell script which takes two arguments and outputs them in reverse order using `nano` command and ran it using `bash` and passed the arguments `college` and `pwn` to check if the script was proper and got the output `pwn college` and then ran `/challenge/run` and got the flag.
+   ```bash
+   hacker@chaining~scripting-with-arguments:~$ nano solve.sh
+   hacker@chaining~scripting-with-arguments:~$ bash solve.sh college pwn
+   pwn college
+   hacker@chaining~scripting-with-arguments:~$ /challenge/run
+   Correct! Your script properly reversed the arguments.
+   Here's your flag:
+   pwn.college{Ukw0TKqklZw6ZTPJSPisxpm-GKO.0VNzMDOxwCNxAzNzEzW}
+   ```
+
+### What i learned:-
+   I learned that scripts can accept arguments and that the script can access these arguments using special variables: `$1` contains the first argument ("hello"), `$2` contains the second argument ("world"), `$3` would contain the third argument (if there had been one)...and so on.
+
+### Refference :-
+   None
+
+
+# **9.<ins>Scripting with conditionals</ins>**:-
+   For this challenge, write a script at `/home/hacker/solve.sh` that: takes one argument and if the argument is "pwn", output "college" and for any other input, output nothing, once your script works correctly, run /challenge/run to get your flag!
+## My solve:-
+   **My flag** :-`pwn.college{wUFsPiujhTDC2nnMKU3RzeE9G8u.0lNzMDOxwCNxAzNzEzW}`
+
+   So, the challenge asked us to write a script at `/home/hacker/solve.sh` that: takes one argument and if the argument is "pwn", output "college" and for any other input output nothing and then run `/challenge/run`, hence i opened the shell and created `solve.sh` shell script which takes one arguments and outputs `college` if the argument is `pwn` and outputs nothing if it is not, using `nano` command and ran it using `bash` and passed the arguments `pwn` to check if the script was proper and got the output `college` and then ran `/challenge/run` and got the flag.
+   ```bash
+   hacker@chaining~scripting-with-conditionals:~$ nano solve.sh
+   hacker@chaining~scripting-with-conditionals:~$ bash solve.sh pwn
+   college
+   hacker@chaining~scripting-with-conditionals:~$ /challenge/run
+   Correct! Your script properly handles all the conditions.
+   Here's your flag:
+   pwn.college{wUFsPiujhTDC2nnMKU3RzeE9G8u.0lNzMDOxwCNxAzNzEzW}
+   ```
+
+### What i learned:-
+   I learned that in bash, you can use `if` statements to make decisions: The syntax is somewhat unforgiving for a few reasons. First, you must have spaces after `if` (if you're used to a language like C, this is different), after `[`, and before `]`. Second, if, then, and fi must all be on different lines (or separated by semicolons); you can't lump them into the same statement. It's also a bit weird: instead of `endif` or `end` or something like that, the terminator of the `if` statement is `fi` (if backwards). Just something you have to remember.
+
+### Refference :-
+   None
+
+
+# **10.<ins>Scripting with default cases</ins>**:-
+   For this challenge, write a script at /home/hacker/solve.sh that: takes one argument, if the argument is "pwn", output "college", for any other input, output "nope", once your script works correctly, run /challenge/run to get your flag!
+## My solve:-
+   **My flag** :-`pwn.college{Urpj5KhiHKXNgWJqFilJ3ju18i7.01NzMDOxwCNxAzNzEzW}`
+
+   So, the challenge asked us to script at `/home/hacker/solve.sh` that: takes one argument and if the argument is "pwn", output "college" and for any other input output `nope` and then run `/challenge/run`, hence i opened the shell and created `solve.sh` shell script which takes one arguments and outputs `college` if the argument is `pwn` and outputs `nope` if it is not, using `nano` command and ran it using `bash` and passed the arguments `pwn` to check if the script was proper and got the output `college` and again ran it and this time passed it the argument `college` and got the output `nope` and then ran `/challenge/run` and got the flag.
+   ```bash
+   hacker@chaining~scripting-with-default-cases:~$ nano solve.sh
+   hacker@chaining~scripting-with-default-cases:~$ bash solve.sh pwn
+   college
+   hacker@chaining~scripting-with-default-cases:~$ bash solve.sh college
+   nope
+   hacker@chaining~scripting-with-default-cases:~$ /challenge/run
+   Correct! Your script properly handles the if/else conditions.
+   Here's your flag:
+   pwn.college{Urpj5KhiHKXNgWJqFilJ3ju18i7.01NzMDOxwCNxAzNzEzW}
+   ```
+
+### What i learned:-
+   I learned that the `else` clause executes when the `if` condition is false and that the `else` doesn't have a condition --- it catches everything that didn't match previously. It also doesn't have a `then` statement. Finally, the `fi` goes after the `else` block to denote the end of the whole complex statement.
+
+### Refference :-
+   None
+
+
+# **11.<ins></ins>**:-
    The challenge asks us to 
 ## My solve:-
    **My flag** :-``
@@ -153,24 +224,7 @@
    None
 
 
-# **9.<ins></ins>**:-
-   The challenge asks us to 
-## My solve:-
-   **My flag** :-``
-
-   So, the challenge asked us to
-   ```bash
-  
-   ```
-
-### What i learned:-
-   I learned that 
-
-### Refference :-
-   None
-
-
-# **10.<ins></ins>**:-
+# **12.<ins></ins>**:-
    The challenge asks us to 
 ## My solve:-
    **My flag** :-``
