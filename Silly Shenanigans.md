@@ -24,11 +24,19 @@
 # **2.<ins>Sniffing input</ins>**:-
    In this challenge Zardus doesn't keep the flag lying around in a readable file after he logs in. Instead he'll run a command named `flag_checker`, manually typing the flag into it for verification.Your mission is to use your continued write access to Zardus's `.bashrc` to intercept this flag.
 ## My solve:-
-   **My flag** :-``
+   **My flag** :-`pwn.college{wP7scOIb6YHIFSsYL3PoLMNP4Rn.0VNzEzNxwCNxAzNzEzW}`
 
-   So, the challenge asked us to get the flag that zardus writes, hence i opened the shell and then created a script `flag_checker` which `read` the flag that zardus writes in a variable and then cats it, and stored it in `/home/zardus` directory, then i added this directory to his `PATH` in the `.bashrc` script, and then ran `/challenge/victim` and got the flag.
+   So, the challenge asked us to get the flag that zardus writes, hence i opened the shell and then created a script `flag_checker` which prompts "Type the flag" and then cas the entered flag and stored it it `/home/hacker`, then i added this directory to his `PATH` in the `.bashrc` script using `export PATH="/home/hacker:$PATH"`, and then ran `/challenge/victim` and got the flag.
    ```bash
-   
+   hacker@shenanigans~sniffing-input:~$  nano flag_checker
+   hacker@shenanigans~sniffing-input:~$  nano /home/zardus/.bashrc
+   hacker@shenanigans~sniffing-input:~$ /challenge/victim
+   Username: zardus
+   Password: *********
+   zardus@shenanigans~sniffing-input:~$ flag_checker
+   Type the flag, victim:
+   *************************************************************pwn.college{wP7scOIb6YHIFSsYL3PoLMNP4Rn.0VNzEzNxwCNxAzNzEzW}
+   exit
    ```
 
 ### What i learned:-
@@ -38,7 +46,7 @@
    None
 
 
-  # **3.<ins></ins>**:-
+  # **3.<ins>Overshared directories</ins>**:-
    The challenge asks us to 
 ## My solve:-
    **My flag** :-``
